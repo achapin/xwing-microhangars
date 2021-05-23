@@ -1,0 +1,20 @@
+{
+    "factions": [
+        "!",
+        "@",
+        "#",
+        "-",
+        "+",
+        "/",
+        "." 
+    ],
+    "ships": [
+        { 
+            "name": "TIE Interceptor",
+            "icon": "I",
+            "height": 23,
+            "width": 30,
+            "length": 38
+        }
+    ]
+}

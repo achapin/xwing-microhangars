@@ -1,0 +1,204 @@
+<html>
+<head>
+    <!-- Bank gothic for ship names -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <style>
+
+        @font-face {
+            font-family: "Ships";
+            src: url("xwing-miniatures-ships.ttf");
+        }
+
+        @font-face {
+            font-family: "Icons";
+            src: url("xwing-miniatures.ttf");
+        }
+
+        .upsideDown 
+        {
+            filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
+            ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+            -moz-transform: rotate(-180deg);  /* FF3.5+ */
+            -o-transform: rotate(-180deg);  /* Opera 10.5 */
+            -webkit-transform: rotate(-180deg);  /* Safari 3.1+, Chrome */
+        }
+
+        .leftSide
+        {
+            filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
+            ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+            -moz-transform: rotate(90deg);  /* FF3.5+ */
+            -o-transform: rotate(90deg);  /* Opera 10.5 */
+            -webkit-transform: rotate(90deg);  /* Safari 3.1+, Chrome */
+        }
+
+        .rightSide
+        {
+            filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
+            ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+            -moz-transform: rotate(-90deg);  /* FF3.5+ */
+            -o-transform: rotate(-90deg);  /* Opera 10.5 */
+            -webkit-transform: rotate(-90deg);  /* Safari 3.1+, Chrome */
+        }
+
+        .icon {
+            font-family: "Icons";
+            vertical-align: center;
+            text-align: center;
+        }
+
+        .ship {
+            font-family: "Ships";
+            vertical-align: center;
+            text-align: center;
+        }
+
+        .fancy {
+            font-family: "Audiowide";
+            font-size: 2mm;
+            text-align: center;
+        }
+
+        table {
+            border-spacing: 0px;
+        }
+
+        .render-half {
+            margin: 0px;
+            padding: 0px;
+            bottom: 5mm;
+        }
+
+        .render-flap{
+            margin: 0px;
+            padding: 0px;
+            border-top-left-radius: 5mm;
+            border-top-right-radius: 5mm;
+        }
+
+        .model-height {
+            width: 23mm;
+            overflow: hidden;
+        }
+
+        .model-height-height {
+            height: 23mm;
+            overflow: hidden;
+        }
+
+        .model-width {
+            width: 30mm;
+            overflow: hidden;
+        }
+
+        .model-length {
+            height: 38mm;
+            overflow: hidden;
+        }
+
+        .top-flap {
+            height: 10mm;
+        }
+
+        .side-flap {
+            width: 10mm;
+        }
+
+        .flap-left{
+            margin: 0px;
+            padding: 0px;
+            border-top-left-radius: 23mm;
+        }
+
+        .flap-right{
+            margin: 0px;
+            padding: 0px;
+            border-top-right-radius: 23mm;
+        }
+
+        .render {
+            border: .5mm dashed grey;
+        }
+
+        .cut-left {
+            border-left: .5mm solid black;
+        }
+
+        .cut-bottom {
+            border-bottom: .5mm solid black;
+        }
+
+        .cut-right {
+            border-right: .5mm solid black;
+        }
+
+        .cut-top {
+            border-top: .5mm solid black;
+        }
+
+    </style>
+</head>
+<body onload="initialize()">
+    <script src="tuckbox.js"></script>
+    <form>
+        <select id="ship"></select>
+        <select id="faction" class="icon"></select>
+        <input id="color"></input>
+        <button id="addShip">Add Ship</button>
+    </form>
+
+    <table>
+        <tr class="top-flap">
+            <td class="model-height"></td>
+            <td class="model-width render-flap cut-top cut-left cut-right"></td>
+            <td colspan="3"></td>
+        </tr>
+        <tr class="top model-height-height">
+            <td class="model-height flap-left cut-left cut-right cut-top"></td>
+            <td class="model-width render cut-left cut-right">
+                <div class="upsideDown">
+                    <div class="icon">&#x0040</div>
+                    <div class="fancy">TIE Interceptor</div>
+                    <div class="ship">I</div>
+                </div>
+            </td>
+            <td class="model-height flap-right cut-left cut-right cut-top"></td>
+            <td  colspan="2"></td>
+        </tr>
+        <tr class="main model-length">
+            <td class="model-height render cut-left">
+                <div class="leftSide">
+                    <div class="fancy">TIE Interceptor</div>
+                    <div class="ship">I</div>
+                </div>
+            </td>
+            <td class="model-width render">
+                <div class="fancy">TIE Interceptor</div>
+                <div class="ship">I</div>
+            </td>
+            <td class="model-height render">
+                <div class="rightSide">
+                    <div class="fancy">TIE Interceptor</div>
+                    <div class="ship">I</div>
+                </div>
+            </td>
+            <td class="model-width render cut-top">
+                <div class="fancy">TIE Interceptor</div>
+                <div class="icon">I</div>
+            </td>
+            <td class="side-flap render cut-top cut-bottom cut-right"></td>
+            <td></td>
+        </tr>
+        <tr class="model-height-height">
+            <td class="model-height render cut-left cut-bottom cut-right">
+            </td>
+            <td class="model-width render cut-left cut-bottom cut-right">
+            </td>
+            <td class="model-height render cut-left cut-bottom cut-right">
+            </td>
+            <td class="model-width render cut-left cut-bottom cut-right"></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
