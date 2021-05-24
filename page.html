@@ -47,6 +47,10 @@
             text-align: center;
         }
 
+        .icon option {
+            font-family: "Icons";
+        }
+
         .ship {
             font-family: "Ships";
             vertical-align: center;
@@ -77,22 +81,18 @@
         }
 
         .model-height {
-            width: 23mm;
             overflow: hidden;
         }
 
         .model-height-height {
-            height: 23mm;
             overflow: hidden;
         }
 
         .model-width {
-            width: 30mm;
             overflow: hidden;
         }
 
         .model-length {
-            height: 38mm;
             overflow: hidden;
         }
 
@@ -107,13 +107,11 @@
         .flap-left{
             margin: 0px;
             padding: 0px;
-            border-top-left-radius: 23mm;
         }
 
         .flap-right{
             margin: 0px;
             padding: 0px;
-            border-top-right-radius: 23mm;
         }
 
         .render {
@@ -144,61 +142,9 @@
         <select id="ship"></select>
         <select id="faction" class="icon"></select>
         <input id="color"></input>
-        <button id="addShip">Add Ship</button>
+        <div id="addShip" onclick="addShip()">Add Ship</div>
     </form>
-
-    <table>
-        <tr class="top-flap">
-            <td class="model-height"></td>
-            <td class="model-width render-flap cut-top cut-left cut-right"></td>
-            <td colspan="3"></td>
-        </tr>
-        <tr class="top model-height-height">
-            <td class="model-height flap-left cut-left cut-right cut-top"></td>
-            <td class="model-width render cut-left cut-right">
-                <div class="upsideDown">
-                    <div class="icon">&#x0040</div>
-                    <div class="fancy">TIE Interceptor</div>
-                    <div class="ship">I</div>
-                </div>
-            </td>
-            <td class="model-height flap-right cut-left cut-right cut-top"></td>
-            <td  colspan="2"></td>
-        </tr>
-        <tr class="main model-length">
-            <td class="model-height render cut-left">
-                <div class="leftSide">
-                    <div class="fancy">TIE Interceptor</div>
-                    <div class="ship">I</div>
-                </div>
-            </td>
-            <td class="model-width render">
-                <div class="fancy">TIE Interceptor</div>
-                <div class="ship">I</div>
-            </td>
-            <td class="model-height render">
-                <div class="rightSide">
-                    <div class="fancy">TIE Interceptor</div>
-                    <div class="ship">I</div>
-                </div>
-            </td>
-            <td class="model-width render cut-top">
-                <div class="fancy">TIE Interceptor</div>
-                <div class="icon">I</div>
-            </td>
-            <td class="side-flap render cut-top cut-bottom cut-right"></td>
-            <td></td>
-        </tr>
-        <tr class="model-height-height">
-            <td class="model-height render cut-left cut-bottom cut-right">
-            </td>
-            <td class="model-width render cut-left cut-bottom cut-right">
-            </td>
-            <td class="model-height render cut-left cut-bottom cut-right">
-            </td>
-            <td class="model-width render cut-left cut-bottom cut-right"></td>
-            <td></td>
-        </tr>
-    </table>
+    <div id="ships">
+    </div>
 </body>
 </html>

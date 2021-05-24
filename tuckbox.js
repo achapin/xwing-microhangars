@@ -28,30 +28,82 @@ function loadURL(url){
 }
 
 function dataLoaded(json){
-    alert("data loaded");
 	ships = json.ships;
     factions = json.factions;
     populateDropdowns();
 }
 
 function populateDropdowns(){
-    shipSelection = document.getElementById("ship").value = language;
+    shipSelection = document.getElementById("ship");
     ships.forEach(function(ship){
-        var option = new Option(ship.name, ship);
-        shipSelection.add(option);
-        alert("add ship" + ship.name);
+        var option = new Option(ship.name, JSON.stringify(ship));
+        shipSelection.add(option);;
     });
-    factionSelection = document.getElementById("faction").value = language;
+    factionSelection = document.getElementById("faction");
     factions.forEach(function(faction){
         var option = new Option(faction);
         factionSelection.add(option);
-        alert("add faction" + faction);
     });
-    document.getElementById("addShip").addEventListener("click", addShip);
 }
 
 function addShip(){
+	document.getElementById("ships").innerHTML += getShipTable(shipSelection.value, factionSelection.value);
+}
 
+function getShipTable(shipToParse, faction){
+	var ship = JSON.parse(shipToParse);
+	var display = `<div class="icon">${faction}</div>
+                <div class="fancy">${ship.name}</div>
+                <div class="ship">${ship.icon}</div>`
+
+	return `<table>
+    <tr class="top-flap">
+        <td class="model-height" style="width:${ship.height}mm;"></td>
+        <td class="model-width render-flap cut-top cut-left cut-right" style="width:${ship.width}mm;"></td>
+        <td colspan="3"></td>
+    </tr>
+    <tr class="top model-height-height" style="height:${ship.height}mm;">
+        <td class="model-height flap-left cut-left cut-right cut-top" style="width:${ship.height}mm;"></td>
+        <td class="model-width render cut-left cut-right" style="width:${ship.width}mm;">
+            <div class="upsideDown">
+                ${display}
+            </div>
+        </td>
+        <td class="model-height flap-right cut-left cut-right cut-top" style="width:${ship.height}mm;"></td>
+        <td  colspan="2"></td>
+    </tr>
+    <tr class="main model-length"  style="height:${ship.length}mm;">
+        <td class="model-height render cut-left style="width:${ship.height}mm;"">
+            <div class="leftSide">
+                ${display}
+            </div>
+        </td>
+        <td class="model-width render" style="width:${ship.width}mm;">
+            ${display}
+        </td>
+        <td class="model-height render style="width:${ship.height}mm;"">
+            <div class="rightSide">
+                ${display}
+            </div>
+        </td>
+        <td class="model-width render cut-top" style="width:${ship.width}mm;">
+            ${display}
+        </td>
+        <td class="side-flap render cut-top cut-bottom cut-right"></td>
+        <td></td>
+    </tr>
+    <tr class="model-height-height" style="height:${ship.height}mm;">
+        <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm;">
+        </td>
+        <td class="model-width render cut-left cut-bottom cut-right" style="width:${ship.width}mm;">
+        </td>
+        <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm;">
+        </td>
+        <td class="model-width render cut-left cut-bottom cut-right" style="width:${ship.width}mm;">
+        </td>
+        <td></td>
+    </tr>
+</table>`;
 }
 
 function initialize(){
