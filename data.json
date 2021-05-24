@@ -1,13 +1,13 @@
 {
-    "factions": [
-        "!",
-        "@",
-        "#",
-        "-",
-        "+",
-        "/",
-        "." 
-    ],
+    "factions": {
+        "Rebel Alliance":"!",
+        "Galactic Empire":"@",
+        "Scum and Villainy":"#",
+        "Resistance":"-",
+        "First Order":"+",
+        "Galactic Republic":"/",
+        "Seperatist Alliance":"." 
+    },
     "ships": [
         { 
             "name": "TIE Interceptor",
@@ -15,6 +15,43 @@
             "height": 23,
             "width": 30,
             "length": 38
+        },
+        { 
+            "name": "TIE/D Defender",
+            "icon": "D",
+            "height": 40,
+            "width": 40,
+            "length": 35
+        },
+        { 
+            "name": "RZ-1 A-Wing",
+            "icon": "a",
+            "height": 13,
+            "width": 23,
+            "length": 37
+        },
+        { 
+            "name": "A/SF-01 B-Wing",
+            "modifier" : "(Folding)",
+            "icon": "b",
+            "height": 13,
+            "width": 28,
+            "length": 63
+        },
+        { 
+            "name": "HWK-290 Light Freighter",
+            "icon": "h",
+            "height": 22,
+            "width": 55,
+            "length": 63
+        },
+        { 
+            "name": "BTL-A4 Y-Wing",
+            "modifier" : "(2.0 Sculpt)",
+            "icon": "y",
+            "height": 16,
+            "width": 32,
+            "length": 61
         }
     ]
 }

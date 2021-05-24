@@ -2,6 +2,7 @@ var ships;
 var factions;
 var shipSelection;
 var factionSelection;
+var shipId = 0;
 
 function getUrl(url){
 	var req = new XMLHttpRequest();
@@ -40,23 +41,30 @@ function populateDropdowns(){
         shipSelection.add(option);;
     });
     factionSelection = document.getElementById("faction");
-    factions.forEach(function(faction){
-        var option = new Option(faction);
+    Object.keys(factions).forEach(function(faction){
+        var option = new Option(faction, factions[faction]);
         factionSelection.add(option);
     });
 }
 
-function addShip(){
-	document.getElementById("ships").innerHTML += getShipTable(shipSelection.value, factionSelection.value);
+function remove(id){
+	document.getElementById("ship-"+id).remove();
 }
 
-function getShipTable(shipToParse, faction){
+function addShip(){
+	document.getElementById("ships").innerHTML += getShipTable(shipSelection.value, factionSelection.value, shipId);
+	shipId++;
+}
+
+function getShipTable(shipToParse, faction, id){
 	var ship = JSON.parse(shipToParse);
 	var display = `<div class="icon">${faction}</div>
                 <div class="fancy">${ship.name}</div>
                 <div class="ship">${ship.icon}</div>`
 
-	return `<table>
+	return `<div id="ship-${id}" class="box">
+	<span class="removeButton no-print" onclick="remove(${id})">Remove</span>
+	<table>
     <tr class="top-flap">
         <td class="model-height" style="width:${ship.height}mm;"></td>
         <td class="model-width render-flap cut-top cut-left cut-right" style="width:${ship.width}mm;"></td>
@@ -103,7 +111,8 @@ function getShipTable(shipToParse, faction){
         </td>
         <td></td>
     </tr>
-</table>`;
+</table>
+</div>`;
 }
 
 function initialize(){

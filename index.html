@@ -14,6 +14,22 @@
             src: url("xwing-miniatures.ttf");
         }
 
+        @media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+
+            div {
+                break-inside: avoid;
+            }
+        }
+
+        .box {
+            padding: 2mm;
+        }
+
         .upsideDown 
         {
             filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
@@ -138,9 +154,9 @@
 </head>
 <body onload="initialize()">
     <script src="tuckbox.js"></script>
-    <form>
+    <form class="no-print">
         <select id="ship"></select>
-        <select id="faction" class="icon"></select>
+        <select id="faction"></select>
         <input id="color"></input>
         <div id="addShip" onclick="addShip()">Add Ship</div>
     </form>
