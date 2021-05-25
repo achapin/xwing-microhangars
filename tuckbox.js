@@ -71,13 +71,13 @@ function getShipTable(shipToParse, faction, id){
         <td colspan="3"></td>
     </tr>
     <tr class="top model-height-height" style="height:${ship.height}mm;">
-        <td class="model-height flap-left cut-left cut-right cut-top" style="width:${ship.height}mm;"></td>
+        <td class="model-height flap-left cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-left-radius:${ship.height}mm;"></td>
         <td class="model-width render cut-left cut-right" style="width:${ship.width}mm;">
             <div class="upsideDown">
                 ${display}
             </div>
         </td>
-        <td class="model-height flap-right cut-left cut-right cut-top" style="width:${ship.height}mm;"></td>
+        <td class="model-height flap-right cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
         <td  colspan="2"></td>
     </tr>
     <tr class="main model-length"  style="height:${ship.length}mm;">
