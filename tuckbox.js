@@ -37,8 +37,12 @@ function dataLoaded(json){
 function populateDropdowns(){
     shipSelection = document.getElementById("ship");
     ships.forEach(function(ship){
-        var option = new Option(ship.name, JSON.stringify(ship));
-        shipSelection.add(option);;
+    	var name = ship.name;
+    	if(ship.hasOwnProperty("modifier")){
+    		name += " " + ship.modifier;
+    	}
+        var option = new Option(name, JSON.stringify(ship));
+        shipSelection.add(option);
     });
     factionSelection = document.getElementById("faction");
     Object.keys(factions).forEach(function(faction){
