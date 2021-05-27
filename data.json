@@ -9,41 +9,94 @@
         "Seperatist Alliance":"." 
     },
     "ships": [
+        {
+            "name": "Belbullab-22 Starfighter",
+            "icon": "[",
+            "height": 14,
+            "width": 22,
+            "length": 33,
+            "factions": ["Seperatist Alliance"]
+        },
+        {
+            "name": "Droid Tri-Fighter",
+            "icon": "+",
+            "height": 21,
+            "width": 19,
+            "length": 29,
+            "factions": ["Seperatist Alliance"]
+        },
+        {
+            "name": "HMP Droid Gunship",
+            "icon": ".",
+            "height": 13,
+            "width": 43,
+            "length": 55,
+            "factions": ["Seperatist Alliance"]
+        },
+        {
+            "name": "Hyena-Class Droid Bomber",
+            "icon": "=",
+            "height": 13,
+            "width": 33,
+            "length": 47,
+            "factions": ["Seperatist Alliance"]
+        },
+        {
+            "name": "Nantex-Class Starfighter",
+            "icon": ";",
+            "height": 20,
+            "width": 10,
+            "length": 42,
+            "factions": ["Seperatist Alliance"]
+        },
+        {
+            "name": "Vulture-class Droid Fighter",
+            "icon": "_",
+            "height": 16,
+            "width": 24,
+            "length": 34,
+            "factions": ["Seperatist Alliance"]
+        },
         { 
             "name": "TIE Interceptor",
             "icon": "I",
             "height": 23,
             "width": 30,
-            "length": 38
+            "length": 38,
+            "factions": ["Galactic Empire"]
         },
         { 
             "name": "TIE/D Defender",
             "icon": "D",
             "height": 40,
             "width": 40,
-            "length": 36
+            "length": 36,
+            "factions": ["Galactic Empire"]
         },
         { 
             "name": "RZ-1 A-Wing",
             "icon": "a",
             "height": 13,
             "width": 23,
-            "length": 37
+            "length": 37,
+            "factions": ["Rebel Alliance"]
         },
         { 
             "name": "A/SF-01 B-Wing",
-            "modifier" : "(Folding)",
+            "modifier" : "(Folding Wings)",
             "icon": "b",
             "height": 13,
             "width": 28,
-            "length": 63
+            "length": 63,
+            "factions": ["Rebel Alliance"]
         },
         { 
             "name": "HWK-290 Light Freighter",
             "icon": "h",
             "height": 22,
             "width": 55,
-            "length": 63
+            "length": 63,
+            "factions": ["Rebel Alliance", "Scum and Villainy"]
         },
         { 
             "name": "BTL-A4 Y-Wing",
@@ -51,7 +104,8 @@
             "icon": "y",
             "height": 16,
             "width": 32,
-            "length": 61
+            "length": 61,
+            "factions": ["Rebel Alliance", "Scum and Villainy"]
         }
     ]
 }
