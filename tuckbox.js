@@ -65,7 +65,10 @@ function getShipTable(shipToParse, faction, id){
 	var display = `<div class="icon shipFaction">${faction}</div>
                 <div class="fancy">${ship.name}</div>
                 <div class="ship">${ship.icon}</div>`
-
+    var displayTop = "";
+    if(!ship.hasOwnProperty("display-top") || ship.display-top){
+    	displayTop = `<div class="upsideDown content">${display}</div>`;
+    }
 	return `<div id="ship-${id}" class="box">
 	<span class="removeButton no-print" onclick="remove(${id})">Remove</span>
 	<table>
@@ -77,9 +80,7 @@ function getShipTable(shipToParse, faction, id){
     <tr class="top model-height-height" style="height:${ship.height}mm; max-height:${ship.height}mm;">
         <td class="model-height flap-left cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-left-radius:${ship.height}mm; max-width:${ship.height}mm;"></td>
         <td class="model-width render cut-left cut-right" style="width:${ship.width}mm; max-width:${ship.width}mm;">
-            <div class="upsideDown content">
-                ${display}
-            </div>
+            ${displayTop}
         </td>
         <td class="model-height flap-right cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-right-radius:${ship.height}mm; max-width:${ship.height}mm;"></td>
         <td  colspan="2"></td>

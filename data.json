@@ -47,6 +47,7 @@
             "height": 10,
             "width": 20,
             "length": 42,
+            "display-top": false,
             "factions": ["Seperatist Alliance"]
         },
         {
