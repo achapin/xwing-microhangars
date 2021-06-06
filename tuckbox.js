@@ -32,22 +32,37 @@ function dataLoaded(json){
 	ships = json.ships;
     factions = json.factions;
     populateDropdowns();
+    populateFactionDropdown();
 }
 
 function populateDropdowns(){
-    shipSelection = document.getElementById("ship");
+    factionSelection = document.getElementById("faction");
+    Object.keys(factions).forEach(function(faction){
+        var option = new Option(faction, factions[faction]);
+        factionSelection.add(option);
+    });
+    factionSelection.onchange = populateFactionDropdown;
+}
+
+function populateFactionDropdown() {
+	var optionIndex = factionSelection.options.selectedIndex;
+	var faction = factionSelection.options[optionIndex].text;
+	alert("populate ships for faction " + faction);
+	shipSelection = document.getElementById("ship");
+	var length = shipSelection.options.length;
+	for (i = length-1; i >= 0; i--) {
+	  shipSelection.options[i] = null;
+	}
     ships.forEach(function(ship){
     	var name = ship.name;
+    	if(!ship.factions.includes(faction)){
+    		return;
+    	}
     	if(ship.hasOwnProperty("modifier")){
     		name += " " + ship.modifier;
     	}
         var option = new Option(name, JSON.stringify(ship));
         shipSelection.add(option);
-    });
-    factionSelection = document.getElementById("faction");
-    Object.keys(factions).forEach(function(faction){
-        var option = new Option(faction, factions[faction]);
-        factionSelection.add(option);
     });
 }
 
