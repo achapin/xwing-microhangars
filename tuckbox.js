@@ -47,7 +47,6 @@ function populateDropdowns(){
 function populateFactionDropdown() {
 	var optionIndex = factionSelection.options.selectedIndex;
 	var faction = factionSelection.options[optionIndex].text;
-	alert("populate ships for faction " + faction);
 	shipSelection = document.getElementById("ship");
 	var length = shipSelection.options.length;
 	for (i = length-1; i >= 0; i--) {
