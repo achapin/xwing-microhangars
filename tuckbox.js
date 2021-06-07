@@ -76,9 +76,19 @@ function addShip(){
 
 function getShipTable(shipToParse, faction, id){
 	var ship = JSON.parse(shipToParse);
-	var display = `<div class="icon shipFaction">${faction}</div>
+	var displayFactionSize = "";
+	if(ship.hasOwnProperty("displayFactionSize"))
+	{
+		displayFactionSize = ` style="font-size:${ship.displayFactionSize}mm"`;
+	}
+	var displayIconSize = "";
+	if(ship.hasOwnProperty("displayIconSize"))
+	{
+		displayIconSize = ` style="font-size:${ship.displayIconSize}mm"`;
+	}
+	var display = `<div class="icon shipFaction"${displayFactionSize}>${faction}</div>
                 <div class="fancy">${ship.name}</div>
-                <div class="ship">${ship.icon}</div>`
+                <div class="ship"${displayIconSize}>${ship.icon}</div>`
     var displayTop = "";
     if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
     	displayTop = `<div class="icon shipFaction">${faction}</div>

@@ -16,6 +16,8 @@
             "width": 22,
             "length": 33,
             "sideLeftOffset" : -7,
+            "displayFactionSize": 5,
+            "displayIconSize": 21,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -24,6 +26,8 @@
             "height": 21,
             "width": 19,
             "length": 29,
+            "displayFactionSize": 5,
+            "displayIconSize": 19,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -33,6 +37,8 @@
             "width": 43,
             "length": 55,
             "sideLeftOffset" : -4.5,
+            "displayFactionSize": 5,
+            "displayIconSize": 46,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -42,6 +48,8 @@
             "width": 33,
             "length": 47,
             "sideLeftOffset" : -8.5,
+            "displayFactionSize": 5,
+            "displayIconSize": 38,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -52,6 +60,8 @@
             "length": 42,
             "displayTop": false,
             "displaySide": false,
+            "displayFactionSize": 5,
+            "displayIconSize": 29,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -61,6 +71,8 @@
             "width": 24,
             "length": 34,
             "sideLeftOffset" : -7,
+            "displayFactionSize": 5,
+            "displayIconSize": 22,
             "factions": ["Seperatist Alliance"]
         },
         { 
@@ -70,6 +82,8 @@
             "width": 30,
             "length": 38,
             "sideLeftOffset" : 3,
+            "displayFactionSize": 5,
+            "displayIconSize": 44,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -79,6 +93,8 @@
             "width": 40,
             "length": 36,
             "sideLeftOffset" : 10,
+            "displayFactionSize": 5,
+            "displayIconSize": 26,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -87,6 +103,8 @@
             "height": 13,
             "width": 23,
             "length": 37,
+            "displayFactionSize":5,
+            "displayIconSize":27,
             "factions": ["Rebel Alliance"]
         },
         { 
@@ -97,6 +115,8 @@
             "width": 28,
             "length": 63,
             "sideLeftOffset" : -3,
+            "displayFactionSize": 5,
+            "displayIconSize": 52,
             "factions": ["Rebel Alliance"]
         },
         { 
@@ -106,6 +126,8 @@
             "width": 55,
             "length": 63,
             "sideLeftOffset" : -4,
+            "displayFactionSize":5,
+            "displayIconSize":54,
             "factions": ["Rebel Alliance", "Scum and Villainy"]
         },
         { 
@@ -116,6 +138,8 @@
             "width": 32,
             "length": 61,
             "sideLeftOffset" : -1,
+            "displayFactionSize":5,
+            "displayIconSize":47,
             "factions": ["Rebel Alliance", "Scum and Villainy"]
         }
     ]
