@@ -165,20 +165,20 @@ function getShipTable(shipToParse, faction, id){
         <td class="model-width render cut-top" style="width:${ship.width}mm; max-width:${ship.width}mm;">
             ${display}
         </td>
-        <td class="side-flap render cut-top cut-bottom cut-right"></td>
+        <td class="side-flap render cut-top cut-bottom cut-right glue"></td>
         <td></td>
     </tr>
     <tr class="model-height-height" style="height:${ship.height}mm;">
-        <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+        <td class="model-height render cut-left cut-bottom cut-right glue" style="width:${ship.height}mm; max-width:${ship.height}mm;">
         </td>
         <td class="model-width render cut-left cut-bottom cut-right" style="width:${ship.width}mm; max-width:${ship.width}mm;">
         <div class="content">
         ${displayTop}
         </div>
         </td>
-        <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+        <td class="model-height render cut-left cut-bottom cut-right glue" style="width:${ship.height}mm; max-width:${ship.height}mm;">
         </td>
-        <td class="model-width render cut-left cut-bottom cut-right" style="width:${ship.width}mm; max-width:${ship.width}mm;">
+        <td class="model-width render cut-left cut-bottom cut-right glue" style="width:${ship.width}mm; max-width:${ship.width}mm;">
         </td>
         <td></td>
     </tr>

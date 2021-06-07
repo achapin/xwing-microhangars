@@ -5,7 +5,7 @@ I love the microhangars made by [SirWilli](https://sirwillibald.com/games/x-wing
 Part of the problem, I think, is that it requires too much manual work for the producer. Thus, my approach is to automate as much as possible. To wit, the setup of an individual ship now only needs to have its stats added to a data file, and then it is immediately printable. I've also set up the page such that you don't need to download a bunch of PDFs, and either waste paper or spend lots of time trying to manually combining existing boxes onto a single sheet. With my generator, you simply add the specific ships you need boxes for, and then depending on your print settings (A4 vs Letter, portrait vs landscape, etc) the generator packs as many ships as possible per page.
 
 ## How to use this tool
-Select the ships you want microhangars for, specify which faction they'll be for, and then click "Add Ship". That will add the new box to the web page. Once you've chosen all your ships, simply print the page using your brower's print command. The page will strip out all the things not needed for the boxes. I recommend printing on heavy paper, gsm300. Once they're printed, cut along the solid lines, and fold along the dashed lines. put glue on the sections that say "glue", and assemble.
+Select the ships you want microhangars for, specify which faction they'll be for, and then click "Add Ship". That will add the new box to the web page. Once you've chosen all your ships, simply print the page using your brower's print command. The page will strip out all the things not needed for the boxes. I recommend printing on heavy paper, gsm300. Once they're printed, cut along the solid lines, and fold along the dashed lines. put glue on the sections that are grey, and assemble.
 
 ## Call for help!
 I have most of the ships for X-Wing, but not all of them. Also, taking accurate measurements of my entire collection is rather tedious - especially when making sure that everything comes out perfectly So if others can submit dimensions for the missing ships, that would be a big help. If you want to contribute, please use the Pull Request feature from github [here](https://github.com/achapin/xwing-microhangars/pulls).
@@ -15,7 +15,6 @@ If you have any other ideas or suggestions, I'd love to hear them - please submi
 # TODOs
 
 These are tasks that I'm planning to work on already - no need to submit them as issues.
-* Actually add text that says "glue" on the flaps that need to be glued
 * Allow for custom faction/ship combos
 * Allow for custom ship icons
 
