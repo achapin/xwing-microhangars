@@ -91,11 +91,21 @@ function getShipTable(shipToParse, faction, id){
                 <div class="fancy">${ship.name}</div>
                 <div class="ship"${displayIconSize}>${ship.icon}</div>`
     
+    var displayTopFactionSize = "";
+	if(ship.hasOwnProperty("displayTopFactionSize"))
+	{
+		displayTopFactionSize = ` style="font-size:${ship.displayTopFactionSize}mm"`;
+	}
+	var displayTopIconSize = "";
+	if(ship.hasOwnProperty("displayTopIconSize"))
+	{
+		displayTopIconSize = ` style="font-size:${ship.displayTopIconSize}mm"`;
+	}
     var displayTop = "";
     if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
-    	displayTop = `<div class="icon shipFaction">${faction}</div>
+    	displayTop = `<div class="icon shipFaction"${displayTopFactionSize}>${faction}</div>
                 <div class="fancy">${ship.name}</div>
-                <div class="ship">${ship.icon}</div>`;
+                <div class="ship"${displayTopIconSize}>${ship.icon}</div>`;
     }
 
     var displaySideFactionSize = "";
