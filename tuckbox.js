@@ -76,6 +76,7 @@ function addShip(){
 
 function getShipTable(shipToParse, faction, id){
 	var ship = JSON.parse(shipToParse);
+	
 	var displayFactionSize = "";
 	if(ship.hasOwnProperty("displayFactionSize"))
 	{
@@ -89,17 +90,29 @@ function getShipTable(shipToParse, faction, id){
 	var display = `<div class="icon shipFaction"${displayFactionSize}>${faction}</div>
                 <div class="fancy">${ship.name}</div>
                 <div class="ship"${displayIconSize}>${ship.icon}</div>`
+    
     var displayTop = "";
     if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
     	displayTop = `<div class="icon shipFaction">${faction}</div>
                 <div class="fancy">${ship.name}</div>
                 <div class="ship">${ship.icon}</div>`;
     }
+
+    var displaySideFactionSize = "";
+	if(ship.hasOwnProperty("displaySideFactionSize"))
+	{
+		displaySideFactionSize = ` style="font-size:${ship.displaySideFactionSize}mm"`;
+	}
+	var displaySideIconSize = "";
+	if(ship.hasOwnProperty("displaySideIconSize"))
+	{
+		displaySideIconSize = ` style="font-size:${ship.displaySideIconSize}mm"`;
+	}
     var displaySide = "";
     if(!ship.hasOwnProperty("displaySide") || ship.displaySide){
-     	displaySide = `<div class="icon shipFaction">${faction}</div>
+     	displaySide = `<div class="icon shipFaction"${displaySideFactionSize}>${faction}</div>
                 <div class="fancy" style="width=${ship.height}mm;">${ship.name}</div>
-                <div class="ship">${ship.icon}</div>`;
+                <div class="ship"${displaySideIconSize}>${ship.icon}</div>`;
     }
 
     var sideLeftOffset = 0;
