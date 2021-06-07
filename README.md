@@ -16,7 +16,6 @@ If you have any other ideas or suggestions, I'd love to hear them - please submi
 
 These are tasks that I'm planning to work on already - no need to submit them as issues.
 * Actually add text that says "glue" on the flaps that need to be glued
-* Increase the font/icon size on the boxes so they are readable
 * Allow for custom faction/ship combos
 * Allow for custom ship icons
 
