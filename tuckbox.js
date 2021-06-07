@@ -31,8 +31,21 @@ function loadURL(url){
 function dataLoaded(json){
 	ships = json.ships;
     factions = json.factions;
+    ships.sort(orderShipsByLocalizedName);
     populateDropdowns();
     populateFactionDropdown();
+}
+
+function orderShipsByLocalizedName(shipOne, shipTwo){
+	return getFullShipName(shipOne).localeCompare(getFullShipName(shipTwo));
+}
+
+function getFullShipName(ship){
+	var name = ship.name;
+	if(ship.hasOwnProperty("modifier")){
+		name += " " + ship.modifier;
+	}
+	return name;
 }
 
 function populateDropdowns(){
@@ -53,14 +66,10 @@ function populateFactionDropdown() {
 	  shipSelection.options[i] = null;
 	}
     ships.forEach(function(ship){
-    	var name = ship.name;
     	if(!ship.factions.includes(faction)){
     		return;
     	}
-    	if(ship.hasOwnProperty("modifier")){
-    		name += " " + ship.modifier;
-    	}
-        var option = new Option(name, JSON.stringify(ship));
+        var option = new Option(getFullShipName(ship), JSON.stringify(ship));
         shipSelection.add(option);
     });
 }

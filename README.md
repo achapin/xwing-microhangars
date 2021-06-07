@@ -15,6 +15,8 @@ If you have any other ideas or suggestions, I'd love to hear them - please submi
 # TODOs
 
 These are tasks that I'm planning to work on already - no need to submit them as issues.
+* Color icons to represent livery
+* Large ships + reinforcement panels
 * Allow for custom faction/ship combos
 * Allow for custom ship icons
 
