@@ -15,6 +15,7 @@
             "height": 14,
             "width": 22,
             "length": 33,
+            "sideLeftOffset" : -7,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -31,6 +32,7 @@
             "height": 13,
             "width": 43,
             "length": 55,
+            "sideLeftOffset" : -4.5,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -39,6 +41,7 @@
             "height": 13,
             "width": 33,
             "length": 47,
+            "sideLeftOffset" : -8.5,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -47,7 +50,8 @@
             "height": 10,
             "width": 20,
             "length": 42,
-            "display-top": false,
+            "displayTop": false,
+            "displaySide": false,
             "factions": ["Seperatist Alliance"]
         },
         {
@@ -56,6 +60,7 @@
             "height": 16,
             "width": 24,
             "length": 34,
+            "sideLeftOffset" : -7,
             "factions": ["Seperatist Alliance"]
         },
         { 
@@ -64,6 +69,7 @@
             "height": 23,
             "width": 30,
             "length": 38,
+            "sideLeftOffset" : 3,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -72,6 +78,7 @@
             "height": 40,
             "width": 40,
             "length": 36,
+            "sideLeftOffset" : 10,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -89,6 +96,7 @@
             "height": 13,
             "width": 28,
             "length": 63,
+            "sideLeftOffset" : -3,
             "factions": ["Rebel Alliance"]
         },
         { 
@@ -97,6 +105,7 @@
             "height": 22,
             "width": 55,
             "length": 63,
+            "sideLeftOffset" : -4,
             "factions": ["Rebel Alliance", "Scum and Villainy"]
         },
         { 
@@ -106,6 +115,7 @@
             "height": 16,
             "width": 32,
             "length": 61,
+            "sideLeftOffset" : -1,
             "factions": ["Rebel Alliance", "Scum and Villainy"]
         }
     ]

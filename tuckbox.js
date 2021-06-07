@@ -80,9 +80,23 @@ function getShipTable(shipToParse, faction, id){
                 <div class="fancy">${ship.name}</div>
                 <div class="ship">${ship.icon}</div>`
     var displayTop = "";
-    if(!ship.hasOwnProperty("display-top") || ship.display-top){
-    	displayTop = `<div class="upsideDown content">${display}</div>`;
+    if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
+    	displayTop = `<div class="icon shipFaction">${faction}</div>
+                <div class="fancy">${ship.name}</div>
+                <div class="ship">${ship.icon}</div>`;
     }
+    var displaySide = "";
+    if(!ship.hasOwnProperty("displaySide") || ship.displaySide){
+     	displaySide = `<div class="icon shipFaction">${faction}</div>
+                <div class="fancy" style="width=${ship.height}mm;">${ship.name}</div>
+                <div class="ship">${ship.icon}</div>`;
+    }
+
+    var sideLeftOffset = 0;
+    if(ship.hasOwnProperty("sideLeftOffset") || ship.displaySide){
+     	sideLeftOffset = ship.sideLeftOffset;
+    }
+
 	return `<div id="ship-${id}" class="box">
 	<span class="removeButton no-print" onclick="remove(${id})">Remove</span>
 	<table>
@@ -94,23 +108,25 @@ function getShipTable(shipToParse, faction, id){
     <tr class="top model-height-height" style="height:${ship.height}mm; max-height:${ship.height}mm;">
         <td class="model-height flap-left cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-left-radius:${ship.height}mm; max-width:${ship.height}mm;"></td>
         <td class="model-width render cut-left cut-right" style="width:${ship.width}mm; max-width:${ship.width}mm;">
+            <div class="upsideDown content">
             ${displayTop}
+            </div>
         </td>
         <td class="model-height flap-right cut-left cut-right cut-top" style="width:${ship.height}mm; border-top-right-radius:${ship.height}mm; max-width:${ship.height}mm;"></td>
         <td  colspan="2"></td>
     </tr>
     <tr class="main model-length"  style="height:${ship.length}mm; max-height:${ship.length}mm;">
         <td class="model-height render cut-left" style="width:${ship.height}mm; max-width:${ship.height}mm;">
-            <div class="leftSide">
-            	${display}
+            <div class="leftSide sideDisplay" style="left:${sideLeftOffset}mm;">
+            	${displaySide}
             </div>
         </td>
         <td class="model-width render" style="width:${ship.width}mm; max-width:${ship.width}mm;">
             ${display}
         </td>
         <td class="model-height render" style="width:${ship.height}mm; max-width:${ship.height}mm;">
-            <div class="rightSide">
-            ${display}
+            <div class="rightSide sideDisplay" style="left:${sideLeftOffset}mm;">
+            ${displaySide}
             </div>
         </td>
         <td class="model-width render cut-top" style="width:${ship.width}mm; max-width:${ship.width}mm;">
@@ -123,6 +139,9 @@ function getShipTable(shipToParse, faction, id){
         <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;">
         </td>
         <td class="model-width render cut-left cut-bottom cut-right" style="width:${ship.width}mm; max-width:${ship.width}mm;">
+        <div class="content">
+        ${displayTop}
+        </div>
         </td>
         <td class="model-height render cut-left cut-bottom cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;">
         </td>
