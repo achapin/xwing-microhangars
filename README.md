@@ -8,7 +8,7 @@ Part of the problem, I think, is that it requires too much manual work for the p
 Select the ships you want microhangars for, specify which faction they'll be for, and then click "Add Ship". That will add the new box to the web page. Once you've chosen all your ships, simply print the page using your brower's print command. The page will strip out all the things not needed for the boxes. I recommend printing on heavy paper, gsm300. Once they're printed, cut along the solid lines, and fold along the dashed lines. put glue on the sections that are grey, and assemble.
 
 ## Call for help!
-I have most of the ships for X-Wing, but not all of them. Also, taking accurate measurements of my entire collection is rather tedious - especially when making sure that everything comes out perfectly So if others can submit dimensions for the missing ships, that would be a big help. If you want to contribute, please use the Pull Request feature from github [here](https://github.com/achapin/xwing-microhangars/pulls).
+Most of the current size values are based off of my measurements of existing microhangars, they haven't been verified physically yet. If you build a microhangar and it doesn't fit right, please let me know so I can fix it! If you want to contribute, please use the Pull Request feature from github [here](https://github.com/achapin/xwing-microhangars/pulls).
 
 If you have any other ideas or suggestions, I'd love to hear them - please submit them [here](https://github.com/achapin/xwing-microhangars/issues). This is a passion project, though, so don't expect results in a timely manner.
 
