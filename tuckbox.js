@@ -138,6 +138,10 @@ function getShipTable(shipToParse, faction, id){
     if(ship.hasOwnProperty("sideLeftOffset") || ship.displaySide){
      	sideLeftOffset = ship.sideLeftOffset;
     }
+    var sideRightOffset = sideLeftOffset;
+    if(ship.hasOwnProperty("sideRightOffset") || ship.displaySide){
+     	sideRightOffset = ship.sideRightOffset;
+    }
 
 	return `<div id="ship-${id}" class="box">
 	<span class="removeButton no-print" onclick="remove(${id})">Remove</span>
@@ -167,7 +171,7 @@ function getShipTable(shipToParse, faction, id){
             ${display}
         </td>
         <td class="model-height render" style="width:${ship.height}mm; max-width:${ship.height}mm;">
-            <div class="rightSide sideDisplay" style="left:${sideLeftOffset}mm;">
+            <div class="rightSide sideDisplay" style="left:${sideRightOffset}mm;">
             ${displaySide}
             </div>
         </td>
