@@ -170,7 +170,7 @@
             "displaySideFactionSize":4,
             "displaySideIconSize":15,
             "displayTopFactionSize":4,
-            "displayTopIconSize":14,
+            "displayTopIconSize":12,
             "factions": ["Rebel Alliance", "Scum and Villainy"]
         },
         { 
@@ -202,7 +202,7 @@
             "displaySideFactionSize":4,
             "displaySideIconSize":40,
             "displayTopFactionSize":4,
-            "displayTopIconSize":40,
+            "displayTopIconSize":35,
             "factions": ["Galactic Empire"]
         },
         { 
