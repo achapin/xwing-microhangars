@@ -210,15 +210,18 @@ function getGearTable(shipToParse, faction, id){
     var length = 52;
     var width = 52;
     var height = 17;
+    var iconSize = 42;
 
     if(ship.size == "medium"){
         length = 65;
         width = 63;
+        iconSize = 56;
     }
 
     if(ship.size == "large"){
         length = 85;
         width = 83;
+        iconSize = 75;
     }
 
     var displayFactionSize = "";
@@ -229,7 +232,7 @@ function getGearTable(shipToParse, faction, id){
     var displayIconSize = "";
     if(ship.hasOwnProperty("displayIconSize"))
     {
-        displayIconSize = ` style="font-size:42mm"`;
+        displayIconSize = ` style="font-size:${iconSize}mm"`;
     }
     var display = `<div class="icon shipFaction"${displayFactionSize}>${faction}</div>
                 <div class="fancy">${ship.name}</div>
