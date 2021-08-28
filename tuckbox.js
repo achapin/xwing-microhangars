@@ -199,6 +199,141 @@ function getShipTable(shipToParse, faction, id){
 </div>`;
 }
 
+function addGearbox(){
+    document.getElementById("ships").innerHTML += getGearTable(shipSelection.value, factionSelection.value, shipId);
+    shipId++;
+}
+
+function getGearTable(shipToParse, faction, id){
+    var ship = JSON.parse(shipToParse);
+
+    var length = 52;
+    var width = 52;
+    var height = 17;
+
+    if(ship.size == "medium"){
+        length = 65;
+        width = 63;
+    }
+
+    if(ship.size == "large"){
+        length = 85;
+        width = 83;
+    }
+
+    var displayFactionSize = "";
+    if(ship.hasOwnProperty("displayFactionSize"))
+    {
+        displayFactionSize = ` style="font-size:5mm"`;
+    }
+    var displayIconSize = "";
+    if(ship.hasOwnProperty("displayIconSize"))
+    {
+        displayIconSize = ` style="font-size:42mm"`;
+    }
+    var display = `<div class="icon shipFaction"${displayFactionSize}>${faction}</div>
+                <div class="fancy">${ship.name}</div>
+                <div class="ship"${displayIconSize}>${ship.icon}</div>`
+    
+    var displayTopFactionSize = "";
+    if(ship.hasOwnProperty("displayTopFactionSize"))
+    {
+        displayTopFactionSize = ` style="font-size:4mm"`;
+    }
+    var displayTopIconSize = "";
+    if(ship.hasOwnProperty("displayTopIconSize"))
+    {
+        displayTopIconSize = ` style="font-size:11mm"`;
+    }
+    var displayTop = "";
+    if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
+        displayTop = `<div class="icon shipFaction"${displayTopFactionSize}>${faction}</div>
+                <div class="fancy">${ship.name}</div>
+                <div class="ship"${displayTopIconSize}>${ship.icon}</div>`;
+    }
+
+    var displaySideFactionSize = "";
+    if(ship.hasOwnProperty("displaySideFactionSize"))
+    {
+        displaySideFactionSize = ` style="font-size:4mm"`;
+    }
+    var displaySideIconSize = "";
+    if(ship.hasOwnProperty("displaySideIconSize"))
+    {
+        displaySideIconSize = ` style="font-size:11mm"`;
+    }
+    var displaySide = "";
+    if(!ship.hasOwnProperty("displaySide") || ship.displaySide){
+        displaySide = `<div class="icon shipFaction"${displaySideFactionSize}>${faction}</div>
+                <div class="fancy" style="width=${height}mm;">${ship.name}</div>
+                <div class="ship"${displaySideIconSize}>${ship.icon}</div>`;
+    }
+
+    var sideLeftOffset = 0;
+    if(ship.hasOwnProperty("sideLeftOffset") || ship.displaySide){
+        sideLeftOffset = ship.sideLeftOffset;
+    }
+    var sideRightOffset = sideLeftOffset;
+    if(ship.hasOwnProperty("sideRightOffset") || ship.displaySide){
+        sideRightOffset = ship.sideRightOffset;
+    }
+
+    return `<div id="ship-${id}" class="box">
+    <span class="removeButton no-print" onclick="remove(${id})">Remove</span>
+    <table>
+    <tr class="top-flap">
+        <td class="model-height" style="width:${height}mm; max-width:${height}mm;"></td>
+        <td class="model-width render-flap cut-top cut-left cut-right" style="width:${width}mm; max-width:${width}mm;"></td>
+        <td colspan="3"></td>
+    </tr>
+    <tr class="top model-height-height" style="height:${height+2}mm; max-height:${height+2}mm;">
+        <td class="model-height flap-left cut-left cut-right cut-top" style="width:${height}mm; border-top-left-radius:${height}mm; max-width:${height}mm;"></td>
+        <td class="model-width render cut-left cut-right" style="width:${width}mm; max-width:${width}mm;">
+            <div class="upsideDown content">
+            ${displayTop}
+            </div>
+        </td>
+        <td class="model-height flap-right cut-left cut-right cut-top" style="width:${height}mm; border-top-right-radius:${height}mm; max-width:${height}mm;"></td>
+        <td  colspan="2"></td>
+    </tr>
+    <tr class="main model-length"  style="height:${length}mm; max-height:${length}mm;">
+        <td class="model-height render cut-left" style="width:${height}mm; max-width:${height}mm;">
+            <div class="leftSide sideDisplay">
+                ${displaySide}
+            </div>
+        </td>
+        <td class="model-width render" style="width:${width}mm; max-width:${width}mm;">
+            ${display}
+        </td>
+        <td class="model-height render" style="width:${height}mm; max-width:${height}mm;">
+            <div class="rightSide sideDisplay">
+            ${displaySide}
+            </div>
+        </td>
+        <td class="model-width render cut-top" style="width:${width}mm; max-width:${width}mm;">
+            ${display}
+        </td>
+        <td class="side-flap render cut-top cut-bottom cut-right glue"></td>
+        <td></td>
+    </tr>
+    <tr class="model-height-height" style="height:${height+2}mm;">
+        <td class="model-height render cut-left cut-bottom cut-right glue" style="width:${height}mm; max-width:${height}mm;">
+        </td>
+        <td class="model-width render cut-left cut-bottom cut-right" style="width:${width}mm; max-width:${width}mm;">
+        <div class="content">
+        ${displayTop}
+        </div>
+        </td>
+        <td class="model-height render cut-left cut-bottom cut-right glue" style="width:${height}mm; max-width:${height}mm;">
+        </td>
+        <td class="model-width render cut-left cut-bottom cut-right glue" style="width:${width}mm; max-width:${width}mm;">
+        </td>
+        <td></td>
+    </tr>
+</table>
+</div>`;
+}
+
 function initialize(){
 	var upgradeLoadPromise = loadURL("data.json");
 	upgradeLoadPromise.then(dataLoaded);
