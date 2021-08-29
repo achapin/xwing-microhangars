@@ -257,12 +257,9 @@ function getGearTable(shipToParse, faction, id){
     {
         displayTopIconSize = ` style="font-size:11mm"`;
     }
-    var displayTop = "";
-    if(!ship.hasOwnProperty("displayTop") || ship.displayTop){
-        displayTop = `<div class="icon shipFaction"${displayTopFactionSize}>${faction}</div>
-                <div class="fancy">${ship.name}</div>
-                <div class="ship"${displayTopIconSize}>${ship.icon}</div>`;
-    }
+    var displayTop = `<div class="icon shipFaction"${displayTopFactionSize}>${faction}</div>
+        <div class="fancy">${ship.name}</div>
+        <div class="ship"${displayTopIconSize}>${ship.icon}</div>`;
 
     var displaySideFactionSize = "";
     if(ship.hasOwnProperty("displaySideFactionSize"))
@@ -274,12 +271,9 @@ function getGearTable(shipToParse, faction, id){
     {
         displaySideIconSize = ` style="font-size:11mm"`;
     }
-    var displaySide = "";
-    if(!ship.hasOwnProperty("displaySide") || ship.displaySide){
-        displaySide = `<div class="icon shipFaction"${displaySideFactionSize}>${faction}</div>
-                <div class="fancy" style="width=${height}mm;">${ship.name}</div>
-                <div class="ship"${displaySideIconSize}>${ship.icon}</div>`;
-    }
+    var displaySide = `<div class="icon shipFaction"${displaySideFactionSize}>${faction}</div>
+        <div class="fancy" style="width=${height}mm;">${ship.name}</div>
+        <div class="ship"${displaySideIconSize}>${ship.icon}</div>`;
 
     var sideLeftOffset = 0;
     if(ship.hasOwnProperty("gearLeftSideOffset") || ship.displaySide){
