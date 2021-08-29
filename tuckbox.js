@@ -85,6 +85,15 @@ function addShip(){
 
 function getShipTable(shipToParse, faction, id){
 	var ship = JSON.parse(shipToParse);
+
+    var warning = "";
+
+    if(ship.size == "large"){
+        warning = "LARGE BASE SHIPS HAVE NOT BEEN VERIFIED YET";
+    }
+    if(ship.size == "medium"){
+        warning = "Most medium base microhangars should be printed in landscape orientation";
+    }
 	
 	var displayFactionSize = "";
 	if(ship.hasOwnProperty("displayFactionSize"))
@@ -144,7 +153,7 @@ function getShipTable(shipToParse, faction, id){
     }
 
 	return `<div id="ship-${id}" class="box">
-	<span class="removeButton no-print" onclick="remove(${id})">Remove</span>
+	<span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
 	<table>
     <tr class="top-flap">
         <td class="model-height" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
@@ -213,7 +222,7 @@ function getGearTable(shipToParse, faction, id){
     var iconSize = 42;
 
     if(ship.size == "medium"){
-        length = 65;
+        length = 66;
         width = 63;
         iconSize = 56;
     }
@@ -273,12 +282,12 @@ function getGearTable(shipToParse, faction, id){
     }
 
     var sideLeftOffset = 0;
-    if(ship.hasOwnProperty("sideLeftOffset") || ship.displaySide){
-        sideLeftOffset = ship.sideLeftOffset;
+    if(ship.hasOwnProperty("gearLeftSideOffset") || ship.displaySide){
+        sideLeftOffset = ship.gearLeftSideOffset;
     }
     var sideRightOffset = sideLeftOffset;
-    if(ship.hasOwnProperty("sideRightOffset") || ship.displaySide){
-        sideRightOffset = ship.sideRightOffset;
+    if(ship.hasOwnProperty("gearRightSideOffset") || ship.displaySide){
+        sideRightOffset = ship.gearRightSideOffset;
     }
 
     return `<div id="ship-${id}" class="box">
@@ -301,7 +310,7 @@ function getGearTable(shipToParse, faction, id){
     </tr>
     <tr class="main model-length"  style="height:${length}mm; max-height:${length}mm;">
         <td class="model-height render cut-left" style="width:${height}mm; max-width:${height}mm;">
-            <div class="leftSide sideDisplay">
+            <div class="leftSide sideDisplay" style="left:${sideLeftOffset}mm;">
                 ${displaySide}
             </div>
         </td>
@@ -309,7 +318,7 @@ function getGearTable(shipToParse, faction, id){
             ${display}
         </td>
         <td class="model-height render" style="width:${height}mm; max-width:${height}mm;">
-            <div class="rightSide sideDisplay">
+            <div class="rightSide sideDisplay" style="left:${sideRightOffset}mm;">
             ${displaySide}
             </div>
         </td>
