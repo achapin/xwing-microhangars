@@ -1157,11 +1157,11 @@
             "gearLeftSideOffset" : 2,
             "gearRightSideOffset" : 4,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
-            "displaySideFactionSize":2,
-            "displaySideIconSize":20,
+            "displayIconSize": 60,
+            "displaySideFactionSize": 2,
+            "displaySideIconSize": 25,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 25,
             "factions": ["Rebel Alliance"]
         },
         { 
@@ -1174,11 +1174,11 @@
             "gearLeftSideOffset" : -3,
             "gearRightSideOffset" : 0,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
+            "displayIconSize": 52,
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 15,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -1195,7 +1195,7 @@
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 10,
             "factions": ["Resistance"]
         },
         { 
@@ -1212,7 +1212,7 @@
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 10,
             "factions": ["First Order"]
         },
         { 
@@ -1225,11 +1225,11 @@
             "gearLeftSideOffset" : -13,
             "gearRightSideOffset" : -11,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
+            "displayIconSize": 82,
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 18,
             "factions": ["Scum and Villainy"]
         },
         { 
@@ -1242,11 +1242,11 @@
             "gearLeftSideOffset" : -7,
             "gearRightSideOffset" : -6,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
+            "displayIconSize": 62,
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 35,
             "factions": ["Galactic Empire"]
         },
         { 
@@ -1263,7 +1263,7 @@
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 10,
             "factions": ["Scum and Villainy"]
         },
         { 
@@ -1297,7 +1297,7 @@
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 10,
             "factions": ["Resistance"]
         }
     ]
