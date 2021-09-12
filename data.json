@@ -1276,11 +1276,11 @@
             "gearLeftSideOffset" : -8,
             "gearRightSideOffset" : -6,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
+            "displayIconSize": 90,
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 25,
             "factions": ["Rebel Alliance"]
         },
         { 

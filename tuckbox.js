@@ -159,37 +159,60 @@ function getShipTable(shipToParse, faction, id){
         <table>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="left-bottom-flap glue cut-left cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
-                <td class="left-side render cut-top" style="width:${ship.length}mm; max-width:${ship.length}mm;">LEFT</td>
-                <td class="left-top-flap render cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
+                <td class="left-side render cut-top" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="upsideDown content">
+                    ${displaySide}
+                    </div>
+                </td>
+                <td class="left-top-flap render cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
                 <!--Spacer here?-->
             </tr>
             <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
-                <td class="bottom render cut-left cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">BOTTOM</td>
-                <td class="front render" style="width:${ship.length}mm; max-width:${ship.length}mm;">FRONT</td>
-                <td class="top render cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">TOP</td>
-                <td class="top-flap render cut-top cut-right cut-bottom side-flap"></td>
+                <td class="bottom render cut-left cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                    <div class="leftSide content">
+                    ${displayTop}
+                    </div>
+                </td>
+                <td class="front render" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="leftSide content">
+                    ${display}
+                    </div>
+                </td>
+                <td class="top render cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                    <div class="rightSide content">
+                    ${displayTop}
+                    </div>
+                </td>
+                <td class="top-flap render cut-top cut-right cut-bottom side-flap" style="border-top-right-radius:5mm; border-bottom-right-radius:5mm;"></td>
             </tr>
             <tr class="large-right" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="right-bottom-flap glue cut-top cut-left cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
-                <td class="right-side render cut-bottom" style="width:${ship.length}mm; max-width:${ship.length}mm;">RIGHT</td>
-                <td class="right-top-flap render cut-bottom cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
+                <td class="right-side render cut-bottom" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="content">
+                    ${displaySide}
+                    </div>
+                </td>
+                <td class="right-top-flap render cut-bottom cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-bottom-right-radius:${ship.height}mm;"></td>
                 <!--Spacer here?-->
             </tr>
         </table>
+        <br />
         <table>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="bottom-spacer" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
                 <td class="left-side-flap glue cut-top cut-right cut-bottom cut-left"></td>
-                <!--Spacer here?-->
             </tr>
             <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
                 <td class="bottom-flap glue cut-left cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
-                <td class="back render cut-top cut-right cut-bottom" style="width:${ship.length}mm; max-width:${ship.length}mm;">BACK</td>
+                <td class="back render cut-top cut-right cut-bottom" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="leftSide content">
+                    ${display}
+                    </div>
+                </td>
             </tr>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="bottom-spacer" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
                 <td class="right-side-flap glue cut-left cut-right cut-bottom"></td>
-                <!--Spacer here?-->
             </tr>
         </table>
         </div>`;
