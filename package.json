@@ -4,6 +4,7 @@
   "description": "I love the microhangars made by [SirWilli](https://sirwillibald.com/games/x-wing-miniatures-games/microhangars-2-0/), but it seems like he is no longer updating his versions. I've seen a few other folks try to keep up, but no one has emerged as a new best-in class. So I am to change that with my project.",
   "scripts": {
     "start": "live-server",
+    "build": "tsc",
     "lint:fix": "eslint --ext .js --fix"
   },
   "devDependencies": {
