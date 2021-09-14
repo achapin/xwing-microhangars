@@ -2,11 +2,11 @@
   "factions": {
     "Rebel Alliance": {
       "icon": "!",
-      "color": "#FF0101"
+      "color": "#CD3E43"
     },
     "Galactic Empire": {
       "icon": "@",
-      "color": "#000000"
+      "color": "#567086"
     },
     "Scum and Villainy": {
       "icon": "#",
