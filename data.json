@@ -1140,11 +1140,11 @@
             "gearLeftSideOffset" : -7,
             "gearRightSideOffset" : -6,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
-            "displaySideFactionSize":2,
+            "displayIconSize": 82,
+            "displaySideFactionSize": 4,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize":0,
+            "displayTopIconSize": 20,
             "factions": ["Scum and Villainy"]
         },
         { 
@@ -1191,11 +1191,11 @@
             "gearLeftSideOffset" : -2,
             "gearRightSideOffset" : 0,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
-            "displaySideFactionSize":2,
-            "displaySideIconSize":20,
-            "displayTopFactionSize":4,
-            "displayTopIconSize": 10,
+            "displayIconSize": 70,
+            "displaySideFactionSize": 4,
+            "displaySideIconSize": 30,
+            "displayTopFactionSize": 4,
+            "displayTopIconSize": 15,
             "factions": ["Resistance"]
         },
         { 
@@ -1208,11 +1208,11 @@
             "gearLeftSideOffset" : -4,
             "gearRightSideOffset" : -2,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
+            "displayIconSize": 56,
             "displaySideFactionSize":2,
             "displaySideIconSize":20,
-            "displayTopFactionSize":4,
-            "displayTopIconSize": 10,
+            "displayTopFactionSize": 6,
+            "displayTopIconSize": 40,
             "factions": ["First Order"]
         },
         { 
@@ -1259,10 +1259,10 @@
             "gearLeftSideOffset" : -3,
             "gearRightSideOffset" : 0,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
-            "displaySideFactionSize":2,
-            "displaySideIconSize":20,
-            "displayTopFactionSize":4,
+            "displayIconSize": 65,
+            "displaySideFactionSize": 4,
+            "displaySideIconSize": 20,
+            "displayTopFactionSize": 4,
             "displayTopIconSize": 10,
             "factions": ["Scum and Villainy"]
         },
@@ -1293,11 +1293,11 @@
             "gearLeftSideOffset" : -10,
             "gearRightSideOffset" : -7,
             "displayFactionSize": 4,
-            "displayIconSize": 12,
-            "displaySideFactionSize":2,
+            "displayIconSize": 90,
+            "displaySideFactionSize":4,
             "displaySideIconSize":20,
             "displayTopFactionSize":4,
-            "displayTopIconSize": 10,
+            "displayTopIconSize": 25,
             "factions": ["Resistance"]
         }
     ]

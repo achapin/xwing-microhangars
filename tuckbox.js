@@ -88,9 +88,6 @@ function getShipTable(shipToParse, faction, id){
 
     var warning = "";
 
-    if(ship.size == "large"){
-        warning = "LARGE BASE SHIPS HAVE NOT BEEN VERIFIED YET";
-    }
     if(ship.size == "medium"){
         warning = "Most medium base microhangars should be printed in landscape orientation";
     }
