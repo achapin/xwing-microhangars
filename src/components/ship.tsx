@@ -63,55 +63,57 @@ export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
   return <div id="ship-${id}" className="box">
     {/* <span className="removeButton no-print" onclick="remove(${id})">Remove</span> */}
     <table>
-      <tr className="top-flap">
-          <td className="model-height" style={{ width: shipHeight, maxWidth: shipHeight }}></td>
-          <td className="model-width render-flap cut-top cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}></td>
-          <td colSpan={3}></td>
-      </tr>
-        <tr className="top model-height-height" style={{ height: shipHeightPlus, maxHeight: shipHeightPlus }}>
-          <td className="model-height flap-left cut-left cut-right cut-top" style={{width:shipHeight, borderTopLeftRadius:shipHeight, maxWidth:shipHeight}}></td>
-          <td className="model-width render cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
-              <div className="upsideDown content">
+      <tbody>
+        <tr className="top-flap">
+            <td className="model-height" style={{ width: shipHeight, maxWidth: shipHeight }}></td>
+            <td className="model-width render-flap cut-top cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}></td>
+            <td colSpan={3}></td>
+        </tr>
+          <tr className="top model-height-height" style={{ height: shipHeightPlus, maxHeight: shipHeightPlus }}>
+            <td className="model-height flap-left cut-left cut-right cut-top" style={{width:shipHeight, borderTopLeftRadius:shipHeight, maxWidth:shipHeight}}></td>
+            <td className="model-width render cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
+                <div className="upsideDown content">
+                <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+                </div>
+            </td>
+            <td className="model-height flap-right cut-left cut-right cut-top" style={{width:shipHeight, borderTopRightRadius:shipHeight, maxWidth:shipHeight}}></td>
+            <td colSpan={2}></td>
+        </tr>
+        <tr className="main model-length"  style={{height:shipLength, maxHeight:shipLength}}>
+            <td className="model-height render cut-left" style={{ width: shipHeight, maxWidth: shipHeight }}>
+                <div className="leftSide sideDisplay" style={{left:`${sideLeftOffset}mm`}}>
+                <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+                </div>
+            </td>
+            <td className="model-width render" style={{width:shipWidth, maxWidth:shipWidth}}>
               <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-              </div>
-          </td>
-          <td className="model-height flap-right cut-left cut-right cut-top" style={{width:shipHeight, borderTopRightRadius:shipHeight, maxWidth:shipHeight}}></td>
-          <td colSpan={2}></td>
-      </tr>
-      <tr className="main model-length"  style={{height:shipLength, maxHeight:shipLength}}>
-          <td className="model-height render cut-left" style={{ width: shipHeight, maxWidth: shipHeight }}>
-              <div className="leftSide sideDisplay" style={{left:`${sideLeftOffset}mm`}}>
-              <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-              </div>
-          </td>
-          <td className="model-width render" style={{width:shipWidth, maxWidth:shipWidth}}>
-            <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-          </td>
-          <td className="model-height render" style={{ width: shipHeight, maxWidth: shipHeight }}>
-              <div className="rightSide sideDisplay" style={{left:`${sideRightOffset}mm`}}>
-              <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-              </div>
-          </td>
-          <td className="model-width render cut-top" style={{width:shipWidth, maxWidth:shipWidth}}>
-              <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-          </td>
-          <td className="side-flap render cut-top cut-bottom cut-right glue"></td>
-          <td></td>
-      </tr>
-      <tr className="model-height-height" style={{height:shipHeightPlus}}>
-          <td className="model-height render cut-left cut-bottom cut-right glue" style={{ width: shipHeight, maxWidth: shipHeight }}>
-          </td>
-          <td className="model-width render cut-left cut-bottom cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
-          <div className="content">
-              <DisplayTop ship={ship} faction={faction} useFactionColor={useFactionColor}/>
-          </div>
-          </td>
-          <td className="model-height render cut-left cut-bottom cut-right glue" style={{width:shipHeight, maxWidth:shipHeight}}>
-          </td>
-          <td className="model-width render cut-left cut-bottom cut-right glue" style={{width:shipWidth, maxWidth:shipWidth}}>
-          </td>
-          <td></td>
-      </tr>
+            </td>
+            <td className="model-height render" style={{ width: shipHeight, maxWidth: shipHeight }}>
+                <div className="rightSide sideDisplay" style={{left:`${sideRightOffset}mm`}}>
+                <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+                </div>
+            </td>
+            <td className="model-width render cut-top" style={{width:shipWidth, maxWidth:shipWidth}}>
+                <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+            </td>
+            <td className="side-flap render cut-top cut-bottom cut-right glue"></td>
+            <td></td>
+        </tr>
+        <tr className="model-height-height" style={{height:shipHeightPlus}}>
+            <td className="model-height render cut-left cut-bottom cut-right glue" style={{ width: shipHeight, maxWidth: shipHeight }}>
+            </td>
+            <td className="model-width render cut-left cut-bottom cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
+            <div className="content">
+                <DisplayTop ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+            </div>
+            </td>
+            <td className="model-height render cut-left cut-bottom cut-right glue" style={{width:shipHeight, maxWidth:shipHeight}}>
+            </td>
+            <td className="model-width render cut-left cut-bottom cut-right glue" style={{width:shipWidth, maxWidth:shipWidth}}>
+            </td>
+            <td></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 }
