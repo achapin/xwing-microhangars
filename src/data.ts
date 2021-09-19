@@ -1,4 +1,36 @@
-{
+export interface Faction {
+  name: string;
+  icon: string;
+  color: string;
+}
+
+export interface Ship {
+  name: string;
+  fullName?: string;
+  modifier?: string;
+  icon: string;
+  height: number;
+  width: number;
+  length: number;
+  sideLeftOffset?: number;
+  sideRightOffset?: number;
+  displaySide?: boolean;
+  displayTop?: boolean;
+  displayFactionSize: number;
+  displayIconSize: number;
+  displaySideFactionSize?: number;
+  displaySideIconSize?: number;
+  displayTopFactionSize?: number;
+  displayTopIconSize?: number;
+  factions: string[];
+}
+
+interface Data {
+  factions: Faction[];
+  ships: Ship[];
+}
+
+export const data: Data = {
   "factions": [
     {
       "name": "Rebel Alliance",

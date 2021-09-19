@@ -1,6 +1,11 @@
-import data from "../data.json";
+import { data } from "../data";
 
-const byFullName = (a: any, b: any) => (a.fullName || a.name) > (b.fullName || b.name) ? 1 : -1;
+interface FactionOrShip {
+  name: string;
+  fullName?: string;
+}
+
+const byFullName = (a: FactionOrShip, b: FactionOrShip) => (a.fullName || a.name) > (b.fullName || b.name) ? 1 : -1;
 
 export const factions = data.factions.sort(byFullName);
 export const ships = data.ships

@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { factions, ships } from './data';
-import { FactionInterface, Ship, ShipInterface } from "./ship";
+import { Ship } from "./ship";
 
 export const Ships = () => {
 
   const defaultFaction = factions[0];
   const defaultShip = ships.find(ship => ship.factions.includes(defaultFaction.name));
 
-  const [selectedFaction, setSelectedFaction] = useState<FactionInterface>(defaultFaction);
-  const [selectedShip, setSelectedShip] = useState<ShipInterface>(defaultShip);
-  const [addedShips, setAddedShips] = useState<ShipInterface[]>([]);
+  const [selectedFaction, setSelectedFaction] = useState(defaultFaction);
+  const [selectedShip, setSelectedShip] = useState(defaultShip);
+  const [addedShips, setAddedShips] = useState([]);
 
   const selectFaction = (event: any) => setSelectedFaction(factions.find(faction => faction.name === event.target.value));
   const selectShip = (event: any) => setSelectedShip(event.target.value);
-  const addShip = () => setAddedShips([...addedShips, ships.find(ship => ship.name === selectedShip) as ShipInterface]);
+  const addShip = () => setAddedShips([...addedShips, ships.find(ship => ship.name === selectedShip.name)]);
   const removeShip = (index: number) => setAddedShips([...addedShips.slice(0, index), ...addedShips.slice(index + 1)]);
 
   return <div>

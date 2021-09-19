@@ -1,92 +1,55 @@
-export interface ShipInterface {
-  name: string;
-  fullName: string;
-  modifier?: string;
-  icon: string;
-  height: number;
-  width: number;
-  length: number;
-  sideLeftOffset: number;
-  sideRightOffset: number;
-  displaySide: boolean;
-  displayTop: boolean;
-  displayFactionSize: number;
-  displayIconSize: number;
-  displaySideFactionSize: number;
-  displaySideIconSize: number;
-  displayTopFactionSize: number;
-  displayTopIconSize: number;
-  factions: string[];
+import { Ship as ShipInterface, Faction } from '../data';
+
+interface AllProps {
+  ship: ShipInterface;
+  faction: Faction;
+  useFactionColor: boolean;
 }
 
-export interface FactionInterface {
-  name: string;
-  icon: string;
-  color: string;
+const Display = ({ ship, faction, useFactionColor }: AllProps) => {
+  const factionColor = useFactionColor ? { color: faction.color } : {};
+  const displayFactionSize = ship.displayFactionSize ? { fontSize: `${ship.displayFactionSize}mm`} : {};
+  const displayIconSize = ship.displayIconSize ? { fontSize: `${ship.displayIconSize}mm` } : {};
+
+  return <>
+    <div className="icon shipFaction" style={{ ...displayFactionSize, ...factionColor }}>{faction.icon}</div>
+    <div className="fancy">{ship.name}</div>
+    <div className="ship" style={displayIconSize}>{ship.icon}</div>
+  </>;
 }
 
-export const Ship = ({ ship, faction, useFactionColor }: { ship: ShipInterface, faction: FactionInterface, useFactionColor: boolean }) => {
+const DisplayTop = ({ ship, faction, useFactionColor }: AllProps) => {
+  const factionColor = useFactionColor ? { color: faction.color } : {};
+  const displayTopFactionSize = ship.displayTopFactionSize ? { fontSize: `${ship.displayTopFactionSize}mm`} : {};
+  const displayTopIconSize = ship.displayTopIconSize ? { fontSize: `${ship.displayTopIconSize}mm` } : {};
+
+  return ship.displayTop ? <>
+    <div className="icon shipFaction" style={{ ...displayTopFactionSize, ...factionColor }}>{faction.icon}</div>
+    <div className="fancy">{ship.name}</div>
+    <div className="ship" style={displayTopIconSize}>{ship.icon}</div>
+  </> : <></>;
+}
+
+const DisplaySide = ({ ship, faction, useFactionColor }: AllProps) => {
+  const factionColor = useFactionColor ? { color: faction.color } : {};
+  const displaySideFactionSize = ship.displaySideFactionSize ? { fontSize: `${ship.displaySideFactionSize}mm`} : {};
+  const displaySideIconSize = ship.displaySideIconSize ? { fontSize: `${ship.displaySideIconSize}mm` } : {};
+
+  return ship.displaySide ? <>
+    <div className="icon shipFaction" style={{ ...displaySideFactionSize, ...factionColor }}>{faction.icon}</div>
+    <div className="fancy">{ship.name}</div>
+    <div className="ship" style={displaySideIconSize}>{ship.icon}</div>
+  </> : <></>;
+}
+
+export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
 
   const shipHeight = `${ship.height}mm`;
   const shipHeightPlus = `${ship.height + 2}mm`
 
   const shipWidth = `${ship.width}mm`;
-  const shipWidthPlus = `${ship.width + 2}mm`;
 
   const shipLength = `${ship.length}mm`;
-
-  var displayFactionSize = "";
-  if (ship.hasOwnProperty("displayFactionSize")) {
-    //   displayFactionSize = `style="font-size:${ship.displayFactionSize}mm"`;
-    displayFactionSize = `font-size:${ship.displayFactionSize}mm;`;
-  }
-  var displayIconSize = "";
-  if (ship.hasOwnProperty("displayIconSize")) {
-    displayIconSize = ` style="font-size:${ship.displayIconSize}mm"`;
-  }
-
-  var factionColor = "";
-  if (useFactionColor) {
-    factionColor = `color:${faction.color}`;
-  }
-
-  var display = `<div class="icon shipFaction" style="${displayFactionSize} ${factionColor}">${faction.icon}</div>
-                <div class="fancy">${ship.name}</div>
-                <div class="ship"${displayIconSize}>${ship.icon}</div>`;
-
-  var displayTopFactionSize = "";
-  if (ship.hasOwnProperty("displayTopFactionSize")) {
-    displayTopFactionSize = `font-size:${ship.displayTopFactionSize}mm;`;
-  }
-
-  var displayTopIconSize = "";
-  if (ship.hasOwnProperty("displayTopIconSize")) {
-    displayTopIconSize = ` style="font-size:${ship.displayTopIconSize}mm"`;
-  }
-
-  var displayTop = "";
-  if (!ship.hasOwnProperty("displayTop") || ship.displayTop) {
-    displayTop = `<div class="icon shipFaction" style="${displayTopFactionSize} ${factionColor}">${faction.icon}</div>
-              <div class="fancy">${ship.name}</div>
-              <div class="ship"${displayTopIconSize}>${ship.icon}</div>`;
-  }
-
-  var displaySideFactionSize = "";
-  if (ship.hasOwnProperty("displaySideFactionSize")) {
-    displaySideFactionSize = `font-size:${ship.displaySideFactionSize}mm;`;
-  }
-
-  var displaySideIconSize = "";
-  if (ship.hasOwnProperty("displaySideIconSize")) {
-    displaySideIconSize = ` style="font-size:${ship.displaySideIconSize}mm"`;
-  }
-
-  var displaySide = "";
-  if (!ship.hasOwnProperty("displaySide") || ship.displaySide) {
-    displaySide = `<div class="icon shipFaction" style="${displaySideFactionSize} ${factionColor}">${faction.icon}</div>
-              <div class="fancy" style="width=${ship.height}mm;">${ship.name}</div>
-              <div class="ship"${displaySideIconSize}>${ship.icon}</div>`;
-  }
 
   let sideLeftOffset = 0;
   if (ship.sideLeftOffset || ship.displaySide) {
@@ -109,7 +72,7 @@ export const Ship = ({ ship, faction, useFactionColor }: { ship: ShipInterface, 
           <td className="model-height flap-left cut-left cut-right cut-top" style={{width:shipHeight, borderTopLeftRadius:shipHeight, maxWidth:shipHeight}}></td>
           <td className="model-width render cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
               <div className="upsideDown content">
-              ${displayTop}
+              <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
               </div>
           </td>
           <td className="model-height flap-right cut-left cut-right cut-top" style={{width:shipHeight, borderTopRightRadius:shipHeight, maxWidth:shipHeight}}></td>
@@ -118,19 +81,19 @@ export const Ship = ({ ship, faction, useFactionColor }: { ship: ShipInterface, 
       <tr className="main model-length"  style={{height:shipLength, maxHeight:shipLength}}>
           <td className="model-height render cut-left" style={{ width: shipHeight, maxWidth: shipHeight }}>
               <div className="leftSide sideDisplay" style={{left:`${sideLeftOffset}mm`}}>
-                ${displaySide}
+              <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
               </div>
           </td>
           <td className="model-width render" style={{width:shipWidth, maxWidth:shipWidth}}>
-              ${display}
+            <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
           </td>
           <td className="model-height render" style={{ width: shipHeight, maxWidth: shipHeight }}>
               <div className="rightSide sideDisplay" style={{left:`${sideRightOffset}mm`}}>
-              ${displaySide}
+              <DisplaySide ship={ship} faction={faction} useFactionColor={useFactionColor}/>
               </div>
           </td>
           <td className="model-width render cut-top" style={{width:shipWidth, maxWidth:shipWidth}}>
-              ${display}
+              <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
           </td>
           <td className="side-flap render cut-top cut-bottom cut-right glue"></td>
           <td></td>
@@ -140,7 +103,7 @@ export const Ship = ({ ship, faction, useFactionColor }: { ship: ShipInterface, 
           </td>
           <td className="model-width render cut-left cut-bottom cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
           <div className="content">
-          ${displayTop}
+              <DisplayTop ship={ship} faction={faction} useFactionColor={useFactionColor}/>
           </div>
           </td>
           <td className="model-height render cut-left cut-bottom cut-right glue" style={{width:shipHeight, maxWidth:shipHeight}}>
