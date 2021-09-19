@@ -1,7 +1,7 @@
 import './ships.css';
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Badge, Box, Button, Checkbox, Close, Flex, Label, Select } from 'theme-ui';
+import { Badge, Box, Button, Checkbox, Close, Flex, Label, Select, Switch } from 'theme-ui';
 import { factions, ships, defaultFactionName, defaultShips, shipsByFaction } from './data';
 import { Ship } from "./ship";
 
@@ -40,27 +40,24 @@ export const Ships = () => {
   const removeShip = (index: number) => setAddedShips([...addedShips.slice(0, index), ...addedShips.slice(index + 1)]);
 
   return <>
-    <Flex className="no-print" sx={{ mt: 2 }}>
-      <Box sx={{ mx: 2, pt: 1 }}>
-        <Label>
-          Use faction colors
-          <Checkbox onChange={checkUseFactionColor} defaultChecked={true}/>
-        </Label>
-      </Box>
 
-      <Flex as="form" onSubmit={handleSubmit(addShip)}>
-        <Select {...register("factionName")} onChange={selectFaction} defaultValue={defaultFactionName} sx={{ px: 2 }}>
-          {factions.map(faction =>
-            <option value={faction.name}>{faction.name}</option>
-          )}
-        </Select>
-        <Select {...register("shipName")} sx={{ mx: 2 }}>
-          {availableShips
-            .map(ship => <option value={ship.fullName}>{ship.fullName}</option>)
-          }
-        </Select>
-        <Button type="submit" sx={{ mx: 2 }}>Add ship</Button>
-      </Flex>
+    <Flex className="no-print" as="form" onSubmit={handleSubmit(addShip)} sx={{ mt: 2 }}>
+      
+      <Box sx={{ mx: 2, pt: 2 }}>
+        <Switch label="Use faction colors?" onChange={checkUseFactionColor} defaultChecked={true}/>
+      </Box>
+      
+      <Select {...register("factionName")} onChange={selectFaction} defaultValue={defaultFactionName} sx={{ px: 2 }}>
+        {factions.map(faction =>
+          <option value={faction.name}>{faction.name}</option>
+        )}
+      </Select>
+      <Select {...register("shipName")} sx={{ mx: 2 }}>
+        {availableShips
+          .map(ship => <option value={ship.fullName}>{ship.fullName}</option>)
+        }
+      </Select>
+      <Button type="submit" sx={{ mx: 2 }}>Add ship</Button>
     </Flex>
       
     {addedShips.map(({ ship, faction }, index) =>
