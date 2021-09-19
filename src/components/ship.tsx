@@ -60,7 +60,7 @@ export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
     sideRightOffset = ship.sideRightOffset;
   }
 
-  return <div id="ship-${id}" className="box">
+  return <div className="box">
     {/* <span className="removeButton no-print" onclick="remove(${id})">Remove</span> */}
     <table>
       <tbody>

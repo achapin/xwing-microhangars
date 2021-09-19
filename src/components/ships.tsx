@@ -19,7 +19,7 @@ export const Ships = () => {
   const addShip = ({ ship, faction}: AddedShip) => setAddedShips([...addedShips, { ship, faction }]);
   const removeShip = (index: number) => setAddedShips([...addedShips.slice(0, index), ...addedShips.slice(index + 1)]);
 
-  return <div>
+  return <>
     <div className="no-print">
       <input id="useFactionColor" type="checkbox" />
       <label htmlFor="useFactionColor">Use faction colors</label>
@@ -46,5 +46,5 @@ export const Ships = () => {
         <Ship ship={ship} faction={faction} useFactionColor={true} />
       </div>
     )}
-  </div>
+  </>
 }
