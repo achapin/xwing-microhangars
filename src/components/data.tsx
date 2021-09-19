@@ -14,3 +14,13 @@ export const ships = data.ships
     return { ...ship, fullName }
   })
   .sort(byFullName);
+
+export const defaultFactionName = "Rebel Alliance";
+
+let shipsByFactionObject = {};
+for (const faction of factions) {
+  shipsByFactionObject[faction.name] = ships.filter(ship => ship.factions.includes(faction.name))
+}
+export const shipsByFaction = shipsByFactionObject;
+
+export const defaultShips = shipsByFaction[defaultFactionName];

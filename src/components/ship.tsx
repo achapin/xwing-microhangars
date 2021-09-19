@@ -1,3 +1,4 @@
+import './ship.css';
 import { Ship as ShipInterface, Faction } from '../data';
 
 interface AllProps {
@@ -60,8 +61,7 @@ export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
     sideRightOffset = ship.sideRightOffset;
   }
 
-  return <div className="box">
-    {/* <span className="removeButton no-print" onclick="remove(${id})">Remove</span> */}
+  return <>
     <table>
       <tbody>
         <tr className="top-flap">
@@ -115,5 +115,5 @@ export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
         </tr>
       </tbody>
     </table>
-  </div>
+  </>
 }

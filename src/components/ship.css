@@ -1,0 +1,155 @@
+/* Fonts and printing */
+
+@font-face {
+  font-family: "Ships";
+  src: url("xwing-miniatures-ships.ttf");
+}
+
+@font-face {
+  font-family: "Icons";
+  src: url("xwing-miniatures.ttf");
+}
+
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  div {
+    break-inside: avoid;
+  }
+}
+
+
+/* Ship layout */
+.box {
+  padding: 2mm;
+  float: left;
+}
+
+.upsideDown {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
+  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+  -moz-transform: rotate(-180deg); /* FF3.5+ */
+  -o-transform: rotate(-180deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-180deg); /* Safari 3.1+, Chrome */
+}
+
+.leftSide {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
+  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+  -moz-transform: rotate(90deg); /* FF3.5+ */
+  -o-transform: rotate(90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(90deg); /* Safari 3.1+, Chrome */
+}
+
+.rightSide {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
+  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
+  -moz-transform: rotate(-90deg); /* FF3.5+ */
+  -o-transform: rotate(-90deg); /* Opera 10.5 */
+  -webkit-transform: rotate(-90deg); /* Safari 3.1+, Chrome */
+}
+
+.sideDisplay {
+  width: max-content;
+  position: relative;
+}
+
+.icon {
+  font-family: "Icons";
+  vertical-align: center;
+  text-align: center;
+}
+
+.icon option {
+  font-family: "Icons";
+}
+
+.ship {
+  font-family: "Ships";
+  vertical-align: center;
+  text-align: center;
+}
+
+.fancy {
+  font-family: "Audiowide";
+  font-size: 2mm;
+  text-align: center;
+}
+
+table {
+  border-spacing: 0px;
+}
+
+.render-half {
+  margin: 0px;
+  padding: 0px;
+  bottom: 5mm;
+}
+
+.render-flap {
+  margin: 0px;
+  padding: 0px;
+  border-top-left-radius: 5mm;
+  border-top-right-radius: 5mm;
+}
+
+.model-height {
+  overflow: hidden;
+}
+
+.model-height-height {
+  overflow: hidden;
+}
+
+.model-width {
+  overflow: hidden;
+}
+
+.model-length {
+  overflow: hidden;
+}
+
+.top-flap {
+  height: 10mm;
+}
+
+.side-flap {
+  width: 10mm;
+}
+
+.flap-left {
+  margin: 0px;
+  padding: 0px;
+}
+
+.flap-right {
+  margin: 0px;
+  padding: 0px;
+}
+
+.render {
+  border: 0.5mm dashed grey;
+}
+
+.cut-left {
+  border-left: 0.5mm solid black;
+}
+
+.cut-bottom {
+  border-bottom: 0.5mm solid black;
+}
+
+.cut-right {
+  border-right: 0.5mm solid black;
+}
+
+.cut-top {
+  border-top: 0.5mm solid black;
+}
+
+.glue {
+  background: #bcbcbc;
+}
