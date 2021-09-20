@@ -62,7 +62,7 @@ export const Ships = () => {
       
     {addedShips.map(({ ship, faction }, index) =>
       <Box className="box">
-        <Badge className="no-print" variant="outline" sx={{ color: "primary", bg: "transparent", boxShadow: "inset 0 0 0 1px", position: "relative", top: 40, left: 10}} onClick={() => removeShip(index)}>
+        <Badge className="no-print" variant="outline" sx={{ color: "secondary", bg: "transparent", boxShadow: "inset 0 0 0 1px", position: "relative", top: 40, left: 10}} onClick={() => removeShip(index)}>
           <Close/>
         </Badge>
         <Ship  {...{ ship, faction, useFactionColor }} />

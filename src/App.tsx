@@ -1,11 +1,11 @@
 import './App.css';
 import { ThemeProvider } from '@theme-ui/core';
-import { swiss } from '@theme-ui/presets';
+import { theme } from './theme'
 import { Ships } from './components/ships';
 
 function App() {
   return <>
-    <ThemeProvider theme={swiss}>
+    <ThemeProvider theme={theme}>
       <Ships />
     </ThemeProvider>
   </>;
