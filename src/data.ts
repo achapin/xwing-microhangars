@@ -1,34 +1,73 @@
-{
-  "factions": {
-    "Rebel Alliance": {
+export interface Faction {
+  name: string;
+  icon: string;
+  color: string;
+}
+
+export interface Ship {
+  name: string;
+  fullName?: string;
+  modifier?: string;
+  icon: string;
+  height: number;
+  width: number;
+  length: number;
+  sideLeftOffset?: number;
+  sideRightOffset?: number;
+  displaySide?: boolean;
+  displayTop?: boolean;
+  displayFactionSize: number;
+  displayIconSize: number;
+  displaySideFactionSize?: number;
+  displaySideIconSize?: number;
+  displayTopFactionSize?: number;
+  displayTopIconSize?: number;
+  factions: string[];
+}
+
+interface Data {
+  factions: Faction[];
+  ships: Ship[];
+}
+
+export const data: Data = {
+  "factions": [
+    {
+      "name": "Rebel Alliance",
       "icon": "!",
       "color": "#CD3E43"
     },
-    "Galactic Empire": {
+    {
+      "name": "Galactic Empire",
       "icon": "@",
       "color": "#567086"
     },
-    "Scum and Villainy": {
+    {
+      "name": "Scum and Villainy",
       "icon": "#",
       "color": "#C26422"
     },
-    "Resistance": {
+    {
+      "name": "Resistance",
       "icon": "-",
       "color": "#E55B05"
     },
-    "First Order": {
+    {
+      "name": "First Order",
       "icon": "+",
       "color": "#000000"
     },
-    "Galactic Republic": {
+    {
+      "name": "Galactic Republic",
       "icon": "/",
       "color": "#651616"
     },
-    "Seperatist Alliance": {
+    {
+      "name": "Seperatist Alliance",
       "icon": ".",
       "color": "#15155F"
     }
-  },
+  ],
   "ships": [
     {
       "name": "Belbullab-22 Starfighter",
