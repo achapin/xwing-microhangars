@@ -24,7 +24,7 @@ const DisplayTop = ({ ship, faction, useFactionColor }: AllProps) => {
   const displayTopFactionSize = ship.displayTopFactionSize ? { fontSize: `${ship.displayTopFactionSize}mm`} : {};
   const displayTopIconSize = ship.displayTopIconSize ? { fontSize: `${ship.displayTopIconSize}mm` } : {};
 
-  return ship.displayTop ? <>
+  return !("displayTop" in ship) || ship.displayTop ? <>
     <div className="icon shipFaction" style={{ ...displayTopFactionSize, ...factionColor }}>{faction.icon}</div>
     <div className="fancy">{ship.name}</div>
     <div className="ship" style={displayTopIconSize}>{ship.icon}</div>
@@ -36,7 +36,7 @@ const DisplaySide = ({ ship, faction, useFactionColor }: AllProps) => {
   const displaySideFactionSize = ship.displaySideFactionSize ? { fontSize: `${ship.displaySideFactionSize}mm`} : {};
   const displaySideIconSize = ship.displaySideIconSize ? { fontSize: `${ship.displaySideIconSize}mm` } : {};
 
-  return ship.displaySide ? <>
+  return !("displaySide" in ship) || ship.displaySide ? <>
     <div className="icon shipFaction" style={{ ...displaySideFactionSize, ...factionColor }}>{faction.icon}</div>
     <div className="fancy">{ship.name}</div>
     <div className="ship" style={displaySideIconSize}>{ship.icon}</div>
@@ -73,7 +73,7 @@ export const Ship = ({ ship, faction, useFactionColor }: AllProps) => {
             <td className="model-height flap-left cut-left cut-right cut-top" style={{width:shipHeight, borderTopLeftRadius:shipHeight, maxWidth:shipHeight}}></td>
             <td className="model-width render cut-left cut-right" style={{width:shipWidth, maxWidth:shipWidth}}>
                 <div className="upsideDown content">
-                <Display ship={ship} faction={faction} useFactionColor={useFactionColor}/>
+                <DisplayTop ship={ship} faction={faction} useFactionColor={useFactionColor}/>
                 </div>
             </td>
             <td className="model-height flap-right cut-left cut-right cut-top" style={{width:shipHeight, borderTopRightRadius:shipHeight, maxWidth:shipHeight}}></td>

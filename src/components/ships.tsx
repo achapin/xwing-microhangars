@@ -53,9 +53,9 @@ export const Ships = () => {
         )}
       </Select>
       <Select {...register("shipName")} sx={{ mx: 2 }}>
-        {availableShips
-          .map(ship => <option value={ship.fullName}>{ship.fullName}</option>)
-        }
+        {availableShips.map(ship =>
+          <option key={ship.fullName} value={ship.fullName}>{ship.fullName}</option>
+        )}
       </Select>
       <Button type="submit" sx={{ mx: 2 }}>Add ship</Button>
     </Flex>
