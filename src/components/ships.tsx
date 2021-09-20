@@ -1,7 +1,7 @@
 import './ships.css';
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Badge, Box, Button, Checkbox, Close, Flex, Label, Select, Switch } from 'theme-ui';
+import { Badge, Box, Button, Close, Flex, Select, Switch } from 'theme-ui';
 import { factions, ships, defaultFactionName, defaultShips, shipsByFaction } from './data';
 import { Ship } from "./ship";
 
