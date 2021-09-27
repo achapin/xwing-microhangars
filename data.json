@@ -1380,6 +1380,25 @@
             "displayTopFactionSize":4,
             "displayTopIconSize":12,
             "factions": ["Galactic Republic"]
+        },
+        { 
+            "name": "VCX-100 Light Freighter",
+            "icon": "G",
+            "height": 55,
+            "width": 155,
+            "length": 120,
+            "size": "large",
+            "gearLeftSideOffset" : -5,
+            "gearRightSideOffset" : -2,
+            "sideLeftOffset" : -3,
+            "sideRightOffset" : 2,
+            "displayFactionSize": 5,
+            "displayIconSize": 108,
+            "displaySideFactionSize":4,
+            "displaySideIconSize": 42,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":42,
+            "factions": ["Rebel Alliance"]
         }
     ]
 }
