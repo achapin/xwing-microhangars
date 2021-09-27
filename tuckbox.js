@@ -87,10 +87,6 @@ function getShipTable(shipToParse, faction, id){
 	var ship = JSON.parse(shipToParse);
 
     var warning = "";
-
-    if(ship.size == "medium"){
-        warning = "Most medium base microhangars should be printed in landscape orientation";
-    }
 	
 	var displayFactionSize = "";
 	if(ship.hasOwnProperty("displayFactionSize"))
@@ -213,6 +209,67 @@ function getShipTable(shipToParse, faction, id){
             </tr>
         </table>
         </div>`;
+    }
+
+    if(ship.hasOwnProperty("orientation") && ship.orientation == "side")
+    {
+        return `<div id="ship-${id}" class="box">
+        <span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
+        <table>
+            <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                <td class="left-bottom-flap glue cut-left cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
+                <td class="left-side render cut-top" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="upsideDown content">
+                    ${displaySide}
+                    </div>
+                </td>
+                <td class="left-top-flap render cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
+                <!--Spacer here?-->
+            </tr>
+            <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                <td class="bottom render cut-left cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                    <div class="leftSide content">
+                    ${displayTop}
+                    </div>
+                </td>
+                <td class="front render" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="leftSide content">
+                    ${display}
+                    </div>
+                </td>
+                <td class="top render cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                    <div class="rightSide content">
+                    ${displayTop}
+                    </div>
+                </td>
+                <td class="top-flap render cut-top cut-right cut-bottom side-flap" style="border-top-right-radius:5mm; border-bottom-right-radius:5mm;"></td>
+            </tr>
+            <tr class="large-right" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                <td class="right-bottom-flap glue cut-top cut-left cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
+                <td class="right-side render" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="content">
+                    ${displaySide}
+                    </div>
+                </td>
+                <td class="right-top-flap render cut-bottom cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-bottom-right-radius:${ship.height}mm;"></td>
+                <!--Spacer here?-->
+            </tr>
+            <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                <td class="bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                </td>
+                <td class="front render cut-left cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                    <div class="leftSide content">
+                    ${display}
+                    </div>
+                </td>
+            </tr>
+            <tr class="large-center" style="height:10mm; max-height:10mm;">
+                <td class="bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                </td>
+                <td class="front glue render cut-left cut-bottom cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                </td>
+            </tr>
+        </table>`;
     }
 
 	return `<div id="ship-${id}" class="box">
