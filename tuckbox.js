@@ -217,13 +217,13 @@ function getShipTable(shipToParse, faction, id){
         <span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
         <table>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
-                <td class="left-bottom-flap glue cut-left cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
+                <td class="left-bottom-flap glue cut-left cut-top" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
                 <td class="left-side render cut-top" style="width:${ship.length}mm; max-width:${ship.length}mm;">
                     <div class="upsideDown content">
                     ${displaySide}
                     </div>
                 </td>
-                <td class="left-top-flap render cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
+                <td class="left-top-flap cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
                 <!--Spacer here?-->
             </tr>
             <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
@@ -251,13 +251,13 @@ function getShipTable(shipToParse, faction, id){
                     ${displaySide}
                     </div>
                 </td>
-                <td class="right-top-flap render cut-bottom cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-bottom-right-radius:${ship.height}mm;"></td>
+                <td class="right-top-flap cut-bottom cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-bottom-right-radius:${ship.height}mm;"></td>
                 <!--Spacer here?-->
             </tr>
             <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
-                <td class="bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                <td class="bottom glue cut-left cut-top cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;">
                 </td>
-                <td class="front render cut-left cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                <td class="front render cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
                     <div class="leftSide content">
                     ${display}
                     </div>
