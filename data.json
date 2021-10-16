@@ -1400,6 +1400,26 @@
             "displayTopFactionSize":4,
             "displayTopIconSize":42,
             "factions": ["Rebel Alliance"]
+        },
+        { 
+            "name": "Firespray-class Patrol Craft",
+            "icon": "f",
+            "height": 35,
+            "width": 78,
+            "length": 78,
+            "size": "medium",
+            "orientation" : "side",
+            "gearLeftSideOffset" : -8,
+            "gearRightSideOffset" : -7,
+            "sideLeftOffset" : -3,
+            "sideRightOffset" : 2,
+            "displayFactionSize": 5,
+            "displayIconSize": 69,
+            "displaySideFactionSize":4,
+            "displaySideIconSize": 25,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":25,
+            "factions": ["Scum and Villainy", "Seperatist Alliance"]
         }
     ]
 }
