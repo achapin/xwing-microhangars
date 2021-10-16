@@ -648,6 +648,8 @@
             "width": 38,
             "length": 58,
             "size": "small",
+            "gearLeftSideOffset" : -1,
+            "gearRightSideOffset" : 0,
             "sideLeftOffset" : 5,
             "sideRightOffset" : 9,
             "displayFactionSize": 5,
