@@ -51,7 +51,7 @@ function getFullShipName(ship){
 function populateDropdowns(){
     factionSelection = document.getElementById("faction");
     Object.keys(factions).forEach(function(faction){
-        var option = new Option( "<span class='icon'>"+factions[faction]+"</span> "+faction, factions[faction]);
+        var option = new Option( faction, factions[faction]);
         factionSelection.add(option);
     });
     factionSelection.onchange = populateFactionDropdown;
