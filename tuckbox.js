@@ -51,7 +51,7 @@ function getFullShipName(ship){
 function populateDropdowns(){
     factionSelection = document.getElementById("faction");
     Object.keys(factions).forEach(function(faction){
-        var option = new Option(faction, factions[faction]);
+        var option = new Option( faction, factions[faction]);
         factionSelection.add(option);
     });
     factionSelection.onchange = populateFactionDropdown;
@@ -148,7 +148,7 @@ function getShipTable(shipToParse, faction, id){
     if(ship.size == "large")
     {
         return `<div id="ship-${id}" class="box">
-        <span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
+        <span class="btn-remove no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
         <table>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="left-bottom-flap glue cut-left cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
@@ -214,7 +214,7 @@ function getShipTable(shipToParse, faction, id){
     if(ship.hasOwnProperty("orientation") && ship.orientation == "side")
     {
         return `<div id="ship-${id}" class="box">
-        <span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
+        <span class="btn-remove no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
         <table>
             <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
                 <td class="left-bottom-flap glue cut-left cut-top" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
@@ -273,7 +273,7 @@ function getShipTable(shipToParse, faction, id){
     }
 
 	return `<div id="ship-${id}" class="box">
-	<span class="removeButton no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
+	<span class="btn-remove no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
 	<table>
     <tr class="top-flap">
         <td class="model-height" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
@@ -405,7 +405,7 @@ function getGearTable(shipToParse, faction, id){
     }
 
     return `<div id="ship-${id}" class="box">
-    <span class="removeButton no-print" onclick="remove(${id})">Remove</span>
+    <span class="btn-remove no-print" onclick="remove(${id})">Remove</span>
     <table>
     <tr class="top-flap">
         <td class="model-height" style="width:${height}mm; max-width:${height}mm;"></td>

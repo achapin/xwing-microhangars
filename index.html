@@ -78,6 +78,14 @@
             font-family: "Icons";
         }
 
+        select, option {
+            font-family: "Audiowide";
+        }
+
+        select option .icon {
+            font-family: "Icons";
+        }
+
         .ship {
             font-family: "Ships";
             vertical-align: center;
@@ -165,6 +173,60 @@
             background: #BCBCBC;
         }
 
+        .btn {
+          background: #3498db;
+          background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+          background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+          background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+          background-image: -o-linear-gradient(top, #3498db, #2980b9);
+          background-image: linear-gradient(to bottom, #3498db, #2980b9);
+          -webkit-border-radius: 14;
+          -moz-border-radius: 14;
+          border-radius: 14px;
+          font-family: Audiowide;
+          color: #ffffff;
+          font-size: 10px;
+          padding: 5px 10px 5px 10px;
+          text-decoration: none;
+        }
+
+        .btn:hover {
+          background: #3cb0fd;
+          background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+          background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+          background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+          background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+          background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+          text-decoration: none;
+        }
+
+        .btn-remove {
+          background: #d93434;
+          background-image: -webkit-linear-gradient(top, #d93434, #850707);
+          background-image: -moz-linear-gradient(top, #d93434, #850707);
+          background-image: -ms-linear-gradient(top, #d93434, #850707);
+          background-image: -o-linear-gradient(top, #d93434, #850707);
+          background-image: linear-gradient(to bottom, #d93434, #850707);
+          -webkit-border-radius: 14;
+          -moz-border-radius: 14;
+          border-radius: 14px;
+          font-family: Audiowide;
+          color: #ffffff;
+          font-size: 10px;
+          padding: 5px 10px 5px 10px;
+          text-decoration: none;
+        }
+
+        .btn-remove:hover {
+          background: #b52121;
+          background-image: -webkit-linear-gradient(top, #b52121, #631717);
+          background-image: -moz-linear-gradient(top, #b52121, #631717);
+          background-image: -ms-linear-gradient(top, #b52121, #631717);
+          background-image: -o-linear-gradient(top, #b52121, #631717);
+          background-image: linear-gradient(to bottom, #b52121, #631717);
+          text-decoration: none;
+        }
+
     </style>
 </head>
 <body onload="initialize()">
@@ -172,8 +234,8 @@
     <form class="no-print">
         <select id="faction"></select>
         <select id="ship"></select>
-        <span id="addShip" onclick="addShip()">Add Ship</span>
-        <span id="addGearbox" onclick="addGearbox()">Add Gearbox</span>
+        <span id="addShip" class="btn" onclick="addShip()">Add Ship</span>
+        <span id="addGearbox" class="btn" onclick="addGearbox()">Add Gearbox</span>
         <span style="float:right">
             <span>Issues? Submit them <a href="https://github.com/achapin/xwing-microhangars/issues">HERE</a></span>
             <span><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'B0B561SLW');kofiwidget2.draw();</script> </span>
