@@ -4,23 +4,23 @@
   "homepage": "https://manwaring.github.io/xwing-microhangars",
   "private": true,
   "dependencies": {
-    "@theme-ui/presets": "^0.11.2",
+    "@theme-ui/presets": "^0.12.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.15.3",
-    "theme-ui": "^0.11.2",
-    "web-vitals": "^2.1.0"
+    "react-hook-form": "^7.19.1",
+    "theme-ui": "^0.12.0",
+    "web-vitals": "^2.1.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.9.2",
-    "@types/react": "^17.0.21",
-    "@types/react-dom": "^17.0.9",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
     "react-scripts": "^4.0.3",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
