@@ -1,4 +1,4 @@
-import { data } from "../data";
+import { Factions, factions as unsortedFactions, ships as unsortedShips } from "../data";
 
 interface FactionOrShip {
   name: string;
@@ -7,15 +7,15 @@ interface FactionOrShip {
 
 const byFullName = (a: FactionOrShip, b: FactionOrShip) => (a.fullName || a.name) > (b.fullName || b.name) ? 1 : -1;
 
-export const factions = data.factions.sort(byFullName);
-export const ships = data.ships
+export const factions = unsortedFactions.sort(byFullName);
+export const ships = unsortedShips
   .map(ship => {
     const fullName = ship.modifier ? `${ship.name} ${ship.modifier}` : ship.name
     return { ...ship, fullName }
   })
   .sort(byFullName);
 
-export const defaultFactionName = "Rebel Alliance";
+export const defaultFactionName = Factions.REBEL_ALLIANCE;
 
 let shipsByFactionObject = {};
 for (const faction of factions) {

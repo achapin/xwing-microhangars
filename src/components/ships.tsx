@@ -42,28 +42,31 @@ export const Ships = () => {
   return <>
 
     <Flex className="no-print" as="form" onSubmit={handleSubmit(addShip)} sx={{ mt: 2 }}>
-      
+
       <Box sx={{ mx: 2, pt: 2 }}>
-        <Switch label="Use faction colors?" onChange={checkUseFactionColor} defaultChecked={true}/>
+        <Switch label="Use faction colors?" onChange={checkUseFactionColor} defaultChecked={true} />
       </Box>
-      
+
       <Select {...register("factionName")} onChange={selectFaction} defaultValue={defaultFactionName} sx={{ px: 2 }}>
         {factions.map(faction =>
-          <option value={faction.name}>{faction.name}</option>
+          <option key={faction.name} value={faction.name}>{faction.name}</option>
         )}
       </Select>
+
       <Select {...register("shipName")} sx={{ mx: 2 }}>
         {availableShips.map(ship =>
           <option key={ship.fullName} value={ship.fullName}>{ship.fullName}</option>
         )}
       </Select>
+
       <Button type="submit" sx={{ mx: 2 }}>Add ship</Button>
+
     </Flex>
-      
+
     {addedShips.map(({ ship, faction }, index) =>
-      <Box className="box">
-        <Badge className="no-print" variant="outline" sx={{ color: "secondary", bg: "transparent", boxShadow: "inset 0 0 0 1px", position: "relative", top: 40, left: 10}} onClick={() => removeShip(index)}>
-          <Close/>
+      <Box className="box" key={index}>
+        <Badge className="no-print" variant="outline" sx={{ color: "secondary", bg: "transparent", boxShadow: "inset 0 0 0 1px", position: "relative", top: 40, left: 10 }} onClick={() => removeShip(index)}>
+          <Close />
         </Badge>
         <Ship  {...{ ship, faction, useFactionColor }} />
       </Box>

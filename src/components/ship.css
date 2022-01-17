@@ -21,7 +21,6 @@
   }
 }
 
-
 /* Ship layout */
 .box {
   padding: 2mm;
@@ -57,23 +56,19 @@
   position: relative;
 }
 
-.icon {
+.faction-icon {
   font-family: "Icons";
   vertical-align: center;
   text-align: center;
 }
 
-.icon option {
-  font-family: "Icons";
-}
-
-.ship {
+.ship-icon {
   font-family: "Ships";
   vertical-align: center;
   text-align: center;
 }
 
-.fancy {
+.ship-name {
   font-family: "Audiowide";
   font-size: 2mm;
   text-align: center;
@@ -81,6 +76,10 @@
 
 table {
   border-spacing: 0px;
+}
+
+td {
+  overflow: hidden;
 }
 
 .render-half {
@@ -94,22 +93,6 @@ table {
   padding: 0px;
   border-top-left-radius: 5mm;
   border-top-right-radius: 5mm;
-}
-
-.model-height {
-  overflow: hidden;
-}
-
-.model-height-height {
-  overflow: hidden;
-}
-
-.model-width {
-  overflow: hidden;
-}
-
-.model-length {
-  overflow: hidden;
 }
 
 .top-flap {
