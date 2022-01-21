@@ -8,6 +8,50 @@ export enum Factions {
   SEPARATIST_ALLIANCE = "Separatist Alliance",
 }
 
+export interface Faction {
+  name: Factions;
+  icon: string;
+  color: string;
+}
+
+export const factions: Faction[] = [
+  {
+    name: Factions.FIRST_ORDER,
+    icon: "+",
+    color: "#000000",
+  },
+  {
+    name: Factions.GALACTIC_EMPIRE,
+    icon: "@",
+    color: "#567086",
+  },
+  {
+    name: Factions.GALACTIC_REPUBLIC,
+    icon: "/",
+    color: "#651616",
+  },
+  {
+    name: Factions.REBEL_ALLIANCE,
+    icon: "!",
+    color: "#CD3E43",
+  },
+  {
+    name: Factions.RESISTANCE,
+    icon: "-",
+    color: "#E55B05",
+  },
+  {
+    name: Factions.SEPARATIST_ALLIANCE,
+    icon: ".",
+    color: "#15155F",
+  },
+  {
+    name: Factions.SCUM_AND_VILLAINY,
+    icon: "#",
+    color: "#C26422",
+  },
+];
+
 export interface Panel {
   factionIconSize: number;
   shipIconSize: number;
@@ -15,9 +59,16 @@ export interface Panel {
   rightOffset?: number;
 }
 
+export enum ShipSizes {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}
+
 export interface Ship {
   name: string;
   icon: string;
+  iconMargin?: number;
   factions: string[];
   fullName?: string;
   modifier?: string;
@@ -36,61 +87,12 @@ export interface Ship {
   };
 }
 
-export interface Faction {
-  name: Factions;
-  icon: string;
-  color: string;
-}
-
-export const factions: Faction[] = [
-  {
-    name: Factions.REBEL_ALLIANCE,
-    icon: "!",
-    color: "#CD3E43",
-  },
-  {
-    name: Factions.GALACTIC_EMPIRE,
-    icon: "@",
-    color: "#567086",
-  },
-  {
-    name: Factions.SCUM_AND_VILLAINY,
-    icon: "#",
-    color: "#C26422",
-  },
-  {
-    name: Factions.RESISTANCE,
-    icon: "-",
-    color: "#E55B05",
-  },
-  {
-    name: Factions.FIRST_ORDER,
-    icon: "+",
-    color: "#000000",
-  },
-  {
-    name: Factions.GALACTIC_EMPIRE,
-    icon: "/",
-    color: "#651616",
-  },
-  {
-    name: Factions.SEPARATIST_ALLIANCE,
-    icon: ".",
-    color: "#15155F",
-  },
-];
-
-export enum ShipSizes {
-  SMALL,
-  MEDIUM,
-  LARGE,
-}
-
 export const ships: Ship[] = [
   {
     name: "A/SF-01 B-Wing",
     modifier: "(Fixed Wings)",
     icon: "b",
+    iconMargin: -20,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -104,14 +106,12 @@ export const ships: Ship[] = [
         shipIconSize: 52,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 28,
-        leftOffset: 7,
-        rightOffset: 11,
       },
       top: {
-        factionIconSize: 4,
-        shipIconSize: 24,
+        factionIconSize: 5,
+        shipIconSize: 28,
       },
     },
   },
@@ -119,6 +119,7 @@ export const ships: Ship[] = [
     name: "A/SF-01 B-Wing",
     modifier: "(Folding Wings)",
     icon: "b",
+    iconMargin: -20,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -132,13 +133,12 @@ export const ships: Ship[] = [
         shipIconSize: 52,
       },
       sides: {
-        factionIconSize: 4,
-        shipIconSize: 6,
-        rightOffset: 1,
+        factionIconSize: 3,
+        shipIconSize: 8,
       },
       top: {
-        factionIconSize: 4,
-        shipIconSize: 4,
+        factionIconSize: 3,
+        shipIconSize: 8,
       },
     },
   },
@@ -199,6 +199,7 @@ export const ships: Ship[] = [
   {
     name: "ARC-170 Starfighter",
     icon: "c",
+    iconMargin: -25,
     factions: [Factions.REBEL_ALLIANCE, Factions.GALACTIC_REPUBLIC],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -212,14 +213,12 @@ export const ships: Ship[] = [
         shipIconSize: 52,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 18,
-        leftOffset: -3,
-        rightOffset: 1,
       },
       top: {
-        factionIconSize: 4,
-        shipIconSize: 13,
+        factionIconSize: 5,
+        shipIconSize: 18,
       },
     },
   },

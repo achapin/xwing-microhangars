@@ -1,68 +1,23 @@
-/* Fonts and printing */
-
+/*
+*  Text & icons
+*/
 @font-face {
   font-family: "Ships";
   src: url("xwing-miniatures-ships.ttf");
 }
 
 @font-face {
-  font-family: "Icons";
+  font-family: "Factions";
   src: url("xwing-miniatures.ttf");
 }
 
-@media print {
-  .no-print,
-  .no-print * {
-    display: none !important;
-  }
-
-  div {
-    break-inside: avoid;
-  }
-}
-
-/* Ship layout */
-.box {
-  padding: 2mm;
-  float: left;
-}
-
-.upsideDown {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
-  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
-  -moz-transform: rotate(-180deg); /* FF3.5+ */
-  -o-transform: rotate(-180deg); /* Opera 10.5 */
-  -webkit-transform: rotate(-180deg); /* Safari 3.1+, Chrome */
-}
-
-.leftSide {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
-  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
-  -moz-transform: rotate(90deg); /* FF3.5+ */
-  -o-transform: rotate(90deg); /* Opera 10.5 */
-  -webkit-transform: rotate(90deg); /* Safari 3.1+, Chrome */
-}
-
-.rightSide {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE6,IE7 */
-  ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; /* IE8 */
-  -moz-transform: rotate(-90deg); /* FF3.5+ */
-  -o-transform: rotate(-90deg); /* Opera 10.5 */
-  -webkit-transform: rotate(-90deg); /* Safari 3.1+, Chrome */
-}
-
-.sideDisplay {
-  width: max-content;
-  position: relative;
-}
-
-.faction-icon {
-  font-family: "Icons";
+.faction {
+  font-family: "Factions";
   vertical-align: center;
   text-align: center;
 }
 
-.ship-icon {
+.ship {
   font-family: "Ships";
   vertical-align: center;
   text-align: center;
@@ -74,7 +29,33 @@
   text-align: center;
 }
 
+.upside-down {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(90deg);
+}
+
+.rotate-left {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.rotate-right {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.panel-wrapper {
+  white-space: nowrap;
+}
+
 table {
+  vertical-align: middle;
+  text-align: center;
   border-spacing: 0px;
 }
 
@@ -82,24 +63,21 @@ td {
   overflow: hidden;
 }
 
-.render-half {
-  margin: 0px;
-  padding: 0px;
-  bottom: 5mm;
-}
-
-.render-flap {
+/*
+*  Flaps
+*/
+.flap-fold {
   margin: 0px;
   padding: 0px;
   border-top-left-radius: 5mm;
   border-top-right-radius: 5mm;
 }
 
-.top-flap {
+.flap-top {
   height: 10mm;
 }
 
-.side-flap {
+.flap-side {
   width: 10mm;
 }
 
@@ -113,8 +91,27 @@ td {
   padding: 0px;
 }
 
-.render {
-  border: 0.5mm dashed grey;
+/*
+*  Cell highlighting and shading
+*/
+.glue {
+  background: lightgray;
+}
+
+.fold-left {
+  border-left: 0.5mm dashed gray;
+}
+
+.fold-right {
+  border-right: 0.5mm dashed gray;
+}
+
+.fold-top {
+  border-top: 0.5mm dashed gray;
+}
+
+.fold-bottom {
+  border-bottom: 0.5mm dashed gray;
 }
 
 .cut-left {
@@ -133,6 +130,36 @@ td {
   border-top: 0.5mm solid black;
 }
 
-.glue {
-  background: #bcbcbc;
+@media print {
+  .fold-left {
+    border-left: 0.5mm dashed lightgray;
+  }
+
+  .fold-right {
+    border-right: 0.5mm dashed lightgray;
+  }
+
+  .fold-top {
+    border-top: 0.5mm dashed lightgray;
+  }
+
+  .fold-bottom {
+    border-bottom: 0.5mm dashed lightgray;
+  }
+
+  .cut-left {
+    border-left: 0.5mm solid lightgray;
+  }
+
+  .cut-bottom {
+    border-bottom: 0.5mm solid lightgray;
+  }
+
+  .cut-right {
+    border-right: 0.5mm solid lightgray;
+  }
+
+  .cut-top {
+    border-top: 0.5mm solid lightgray;
+  }
 }

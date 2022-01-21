@@ -1,5 +1,5 @@
 /* Ship layout */
-.box {
+.ship-container {
   padding: 2mm;
   float: left;
 }

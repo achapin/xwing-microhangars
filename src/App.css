@@ -1,22 +1,14 @@
-/* Fonts and printing */
-
-@font-face {
-  font-family: "Ships";
-  src: url("xwing-miniatures-ships.ttf");
-}
-
-@font-face {
-  font-family: "Icons";
-  src: url("xwing-miniatures.ttf");
-}
-
+/*
+*  Print formatting
+*/
 @media print {
   .no-print,
   .no-print * {
     display: none !important;
   }
 
-  div {
+  div,
+  span {
     break-inside: avoid;
   }
 }
