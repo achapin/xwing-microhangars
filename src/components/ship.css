@@ -36,17 +36,24 @@
   transform: rotate(90deg);
 }
 
+.bottom-panel {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(270deg);
+}
+
 .rotate-left {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 
 .rotate-right {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 .panel-wrapper {

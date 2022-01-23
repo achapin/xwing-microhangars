@@ -55,6 +55,7 @@ export const factions: Faction[] = [
 export interface Panel {
   factionIconSize: number;
   shipIconSize: number;
+  shipIconMargin?: number;
   leftOffset?: number;
   rightOffset?: number;
 }
@@ -83,7 +84,7 @@ export interface Ship {
   panels: {
     primary: Panel;
     sides?: Panel;
-    top?: Panel;
+    topAndBottom?: Panel;
   };
 }
 
@@ -109,7 +110,7 @@ export const ships: Ship[] = [
         factionIconSize: 5,
         shipIconSize: 28,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 5,
         shipIconSize: 28,
       },
@@ -119,7 +120,7 @@ export const ships: Ship[] = [
     name: "A/SF-01 B-Wing",
     modifier: "(Folding Wings)",
     icon: "b",
-    iconMargin: -20,
+    iconMargin: -10,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -136,7 +137,7 @@ export const ships: Ship[] = [
         factionIconSize: 3,
         shipIconSize: 8,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 3,
         shipIconSize: 8,
       },
@@ -145,6 +146,7 @@ export const ships: Ship[] = [
   {
     name: "Alpha-class Star Wing",
     icon: "&",
+    iconMargin: -20,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -156,15 +158,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 26,
+        shipIconMargin: -10,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 28,
-        leftOffset: 3,
-        rightOffset: 6,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 32,
       },
     },
@@ -172,6 +173,7 @@ export const ships: Ship[] = [
   {
     name: "Aggressor Assault Fighter",
     icon: "i",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -183,15 +185,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 67,
+        shipIconMargin: -25,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 12,
-        leftOffset: -6,
-        rightOffset: -4,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 12,
       },
     },
@@ -216,7 +217,7 @@ export const ships: Ship[] = [
         factionIconSize: 5,
         shipIconSize: 18,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 5,
         shipIconSize: 18,
       },
@@ -225,6 +226,7 @@ export const ships: Ship[] = [
   {
     name: "Attack Shuttle",
     icon: "g",
+    iconMargin: -10,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -243,7 +245,7 @@ export const ships: Ship[] = [
         leftOffset: -1,
         rightOffset: 1,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 10,
       },
@@ -252,6 +254,7 @@ export const ships: Ship[] = [
   {
     name: "Auzituck Gunship",
     icon: "@",
+    iconMargin: -12,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -270,7 +273,7 @@ export const ships: Ship[] = [
         leftOffset: 2,
         rightOffset: 4,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 17,
       },
@@ -295,7 +298,7 @@ export const ships: Ship[] = [
         factionIconSize: 4,
         shipIconSize: 30,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 15,
       },
@@ -321,7 +324,7 @@ export const ships: Ship[] = [
         shipIconSize: 7,
         leftOffset: -7,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
@@ -347,7 +350,7 @@ export const ships: Ship[] = [
         shipIconSize: 12,
         leftOffset: -3,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 10,
       },
@@ -357,6 +360,7 @@ export const ships: Ship[] = [
     name: "BTL-A4 Y-Wing",
     modifier: "(1.0 Sculpt)",
     icon: "y",
+    iconMargin: -5,
     factions: [Factions.REBEL_ALLIANCE, Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -372,10 +376,9 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 9,
-        leftOffset: -1,
-        rightOffset: 1,
+        shipIconMargin: -10,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -385,6 +388,7 @@ export const ships: Ship[] = [
     name: "BTL-A4 Y-Wing",
     modifier: "(2.0 Sculpt)",
     icon: "y",
+    iconMargin: -5,
     factions: [Factions.REBEL_ALLIANCE, Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -400,9 +404,9 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 9,
-        rightOffset: 3,
+        shipIconMargin: -10,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -427,37 +431,37 @@ export const ships: Ship[] = [
         factionIconSize: 4,
         shipIconSize: 6,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
     },
   },
-  {
-    name: "Customized YT-1300 Light Freighter",
-    icon: "W",
-    factions: [Factions.SCUM_AND_VILLAINY],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 30,
-      width: 148,
-      length: 100,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 4,
-        shipIconSize: 82,
-      },
-      sides: {
-        factionIconSize: 2,
-        shipIconSize: 20,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 18,
-      },
-    },
-  },
+  // {
+  //   name: "Customized YT-1300 Light Freighter",
+  //   icon: "W",
+  //   factions: [Factions.SCUM_AND_VILLAINY],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 30,
+  //     width: 148,
+  //     length: 100,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 82,
+  //     },
+  //     sides: {
+  //       factionIconSize: 2,
+  //       shipIconSize: 20,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 18,
+  //     },
+  //   },
+  // },
   {
     name: "Delta-7 Aethersprite",
     icon: "\\",
@@ -479,7 +483,7 @@ export const ships: Ship[] = [
         leftOffset: -6,
         rightOffset: -4,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 8,
       },
@@ -505,7 +509,7 @@ export const ships: Ship[] = [
         shipIconSize: 16,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 13,
       },
@@ -530,7 +534,7 @@ export const ships: Ship[] = [
         factionIconSize: 4,
         shipIconSize: 8,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -557,7 +561,7 @@ export const ships: Ship[] = [
         shipIconSize: 16,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 19,
       },
@@ -567,6 +571,7 @@ export const ships: Ship[] = [
     name: "Fang Fighter",
     modifier: "(1.0 Sculpt)",
     icon: "M",
+    iconMargin: -15,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -584,7 +589,7 @@ export const ships: Ship[] = [
         shipIconSize: 9,
         rightOffset: 1,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -608,9 +613,8 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 6,
-        leftOffset: 3,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -619,6 +623,7 @@ export const ships: Ship[] = [
   {
     name: "Firespray-class Patrol Craft",
     icon: "f",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY, Factions.SEPARATIST_ALLIANCE],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -632,13 +637,11 @@ export const ships: Ship[] = [
         shipIconSize: 69,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 25,
-        leftOffset: -3,
-        rightOffset: 2,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 25,
       },
     },
@@ -647,6 +650,7 @@ export const ships: Ship[] = [
   {
     name: "G-1A Starfighter",
     icon: "n",
+    iconMargin: -20,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -660,13 +664,11 @@ export const ships: Ship[] = [
         shipIconSize: 57,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 29,
-        leftOffset: 6,
-        rightOffset: 9,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 26,
       },
     },
@@ -691,7 +693,7 @@ export const ships: Ship[] = [
         shipIconSize: 7,
         leftOffset: -4.5,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 5,
       },
@@ -717,7 +719,7 @@ export const ships: Ship[] = [
         shipIconSize: 7,
         leftOffset: -8.5,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 5,
       },
@@ -726,6 +728,7 @@ export const ships: Ship[] = [
   {
     name: "HWK-290 Light Freighter",
     icon: "h",
+    iconMargin: -20,
     factions: [Factions.REBEL_ALLIANCE, Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -741,18 +744,18 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 15,
-        leftOffset: -8,
-        rightOffset: -3,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 12,
+        shipIconMargin: -10,
       },
     },
   },
   {
     name: "Jumpmaster 5000",
     icon: "p",
+    iconMargin: -20,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.LARGE,
@@ -762,22 +765,23 @@ export const ships: Ship[] = [
     },
     panels: {
       primary: {
-        factionIconSize: 4,
-        shipIconSize: 65,
+        factionIconSize: 5,
+        shipIconSize: 75,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 20,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 10,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 20,
       },
     },
   },
   {
     name: "Kihraxz Fighter",
     icon: "r",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -789,14 +793,13 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 36,
+        shipIconMargin: -15,
       },
       sides: {
         factionIconSize: 4,
         shipIconSize: 6,
-        leftOffset: -3,
-        rightOffset: -1,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -822,40 +825,41 @@ export const ships: Ship[] = [
         shipIconSize: 20,
         leftOffset: 6,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 22,
       },
     },
   },
-  {
-    name: "Lambda-Class T-4A Shuttle",
-    icon: "l",
-    factions: [Factions.GALACTIC_EMPIRE],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 46,
-      width: 70,
-      length: 75,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 4,
-        shipIconSize: 62,
-      },
-      sides: {
-        factionIconSize: 2,
-        shipIconSize: 20,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 35,
-      },
-    },
-  },
+  // {
+  //   name: "Lambda-Class T-4A Shuttle",
+  //   icon: "l",
+  //   factions: [Factions.GALACTIC_EMPIRE],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 46,
+  //     width: 70,
+  //     length: 75,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 62,
+  //     },
+  //     sides: {
+  //       factionIconSize: 2,
+  //       shipIconSize: 20,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 35,
+  //     },
+  //   },
+  // },
   {
     name: "Lancer-Class Pursuit Craft",
     icon: "L",
+    iconMargin: -15,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.LARGE,
@@ -865,16 +869,16 @@ export const ships: Ship[] = [
     },
     panels: {
       primary: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 82,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 20,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 20,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 26,
       },
     },
   },
@@ -892,21 +896,22 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 47,
+        shipIconMargin: -15,
       },
       sides: {
-        factionIconSize: 4,
-        shipIconSize: 9,
-        leftOffset: -1,
+        factionIconSize: 5,
+        shipIconSize: 10,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 7,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 10,
       },
     },
   },
   {
     name: "M3-A Interceptor",
     icon: "s",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -918,14 +923,13 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 27,
+        shipIconMargin: -15,
       },
       sides: {
         factionIconSize: 4,
         shipIconSize: 9,
-        leftOffset: -5,
-        rightOffset: -2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -934,6 +938,7 @@ export const ships: Ship[] = [
   {
     name: "Mining Guild TIE Fighter",
     icon: "C",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -947,42 +952,40 @@ export const ships: Ship[] = [
         shipIconSize: 33,
       },
       sides: {
-        factionIconSize: 4,
-        shipIconSize: 23,
-        leftOffset: -1,
-        rightOffset: 3,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 17,
-      },
-    },
-  },
-  {
-    name: "Modified YT-1300 Freighter",
-    icon: "m",
-    factions: [Factions.REBEL_ALLIANCE],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 34,
-      width: 98,
-      length: 126,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 4,
-        shipIconSize: 90,
-      },
-      sides: {
-        factionIconSize: 2,
+        factionIconSize: 5,
         shipIconSize: 20,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 25,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 20,
       },
     },
   },
+  // {
+  //   name: "Modified YT-1300 Freighter",
+  //   icon: "m",
+  //   factions: [Factions.REBEL_ALLIANCE],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 34,
+  //     width: 98,
+  //     length: 126,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 90,
+  //     },
+  //     sides: {
+  //       factionIconSize: 2,
+  //       shipIconSize: 20,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 25,
+  //     },
+  //   },
+  // },
   {
     name: "Naboo Royal N-1 Starfighter",
     icon: "<",
@@ -1004,7 +1007,7 @@ export const ships: Ship[] = [
         leftOffset: -10,
         rightOffset: -8,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
@@ -1048,7 +1051,7 @@ export const ships: Ship[] = [
         leftOffset: -3,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 12,
       },
@@ -1057,6 +1060,7 @@ export const ships: Ship[] = [
   {
     name: "Quadrijet Transfer Spacetug",
     icon: "q",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1070,14 +1074,12 @@ export const ships: Ship[] = [
         shipIconSize: 30,
       },
       sides: {
-        factionIconSize: 4,
-        shipIconSize: 19,
-        leftOffset: -4,
-        rightOffset: -2,
+        factionIconSize: 5,
+        shipIconSize: 20,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 18,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 20,
       },
     },
   },
@@ -1102,7 +1104,7 @@ export const ships: Ship[] = [
         leftOffset: -3,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 12,
       },
@@ -1129,7 +1131,7 @@ export const ships: Ship[] = [
         leftOffset: 666,
         rightOffset: 666,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 0,
       },
@@ -1139,6 +1141,7 @@ export const ships: Ship[] = [
   {
     name: "RZ-1 A-Wing",
     icon: "a",
+    iconMargin: -5,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1147,7 +1150,7 @@ export const ships: Ship[] = [
       length: 39,
     },
     panels: {
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
@@ -1158,8 +1161,6 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 6,
-        leftOffset: 1, // 0
-        rightOffset: 2, // 0
       },
     },
   },
@@ -1183,7 +1184,7 @@ export const ships: Ship[] = [
         shipIconSize: 9,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 8,
       },
@@ -1208,7 +1209,7 @@ export const ships: Ship[] = [
         factionIconSize: 4,
         shipIconSize: 20,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 25,
       },
@@ -1217,6 +1218,7 @@ export const ships: Ship[] = [
   {
     name: "Scurrg H-6 Bomber",
     icon: "H",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1230,13 +1232,11 @@ export const ships: Ship[] = [
         shipIconSize: 40,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 16,
-        leftOffset: -2,
-        rightOffset: 1,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 12,
       },
     },
@@ -1244,6 +1244,7 @@ export const ships: Ship[] = [
   {
     name: "Sheathipede-class Shuttle",
     icon: "%",
+    iconMargin: -10,
     factions: [Factions.REBEL_ALLIANCE, Factions.SEPARATIST_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1259,10 +1260,8 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 10,
-        leftOffset: -4,
-        rightOffset: -4,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
@@ -1271,6 +1270,7 @@ export const ships: Ship[] = [
   {
     name: "StarViper-class Attack Platform",
     icon: "v",
+    iconMargin: -10,
     factions: [Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1282,15 +1282,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 58,
+        shipIconMargin: -20,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 19,
-        leftOffset: -6,
-        rightOffset: -3,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 17,
       },
     },
@@ -1316,7 +1315,7 @@ export const ships: Ship[] = [
         leftOffset: -7,
         rightOffset: -5,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 14,
       },
@@ -1326,6 +1325,7 @@ export const ships: Ship[] = [
     name: "T-65 X-Wing",
     modifier: "(Fixed Wings)",
     icon: "x",
+    iconMargin: -15,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1339,13 +1339,14 @@ export const ships: Ship[] = [
         shipIconSize: 40,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 14,
-        rightOffset: 4,
+        shipIconMargin: -20,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 14,
+        shipIconMargin: -25,
       },
     },
   },
@@ -1353,6 +1354,7 @@ export const ships: Ship[] = [
     name: "T-65 X-Wing",
     modifier: "(Folding Wings)",
     icon: "x",
+    iconMargin: -10,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1366,12 +1368,13 @@ export const ships: Ship[] = [
         shipIconSize: 40,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 6,
       },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
+        shipIconSize: 10,
+        shipIconMargin: -20,
       },
     },
   },
@@ -1396,7 +1399,7 @@ export const ships: Ship[] = [
         shipIconSize: 10,
         rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 7,
       },
@@ -1423,7 +1426,7 @@ export const ships: Ship[] = [
         shipIconSize: 8,
         rightOffset: 1,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 4,
       },
@@ -1432,6 +1435,7 @@ export const ships: Ship[] = [
   {
     name: "TIE Advanced v1",
     icon: "R",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1447,9 +1451,8 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 11,
-        leftOffset: 1,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 10,
       },
@@ -1458,6 +1461,7 @@ export const ships: Ship[] = [
   {
     name: "TIE Advanced x1",
     icon: "A",
+    iconMargin: -15,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1473,9 +1477,9 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 18,
-        rightOffset: 3,
+        shipIconMargin: -20,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 12,
       },
@@ -1484,6 +1488,7 @@ export const ships: Ship[] = [
   {
     name: "TIE Interceptor",
     icon: "I",
+    iconMargin: -20,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1497,12 +1502,11 @@ export const ships: Ship[] = [
         shipIconSize: 28,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 16,
-        leftOffset: 3,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 15,
       },
     },
@@ -1510,6 +1514,7 @@ export const ships: Ship[] = [
   {
     name: "TIE Reaper",
     icon: "V",
+    iconMargin: -20,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -1521,14 +1526,15 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 76,
+        shipIconMargin: -30,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 10,
         leftOffset: 5,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 12,
       },
     },
@@ -1536,6 +1542,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/ag Aggressor",
     icon: "`",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1551,9 +1558,8 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 16,
-        leftOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 15,
       },
@@ -1579,7 +1585,7 @@ export const ships: Ship[] = [
         shipIconSize: 22,
         rightOffset: 4,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 18,
       },
@@ -1588,6 +1594,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/ca Punisher",
     icon: "N",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -1598,23 +1605,23 @@ export const ships: Ship[] = [
     panels: {
       primary: {
         factionIconSize: 5,
-        shipIconSize: 26,
+        shipIconSize: 32,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 28,
-        leftOffset: 3,
-        rightOffset: 10,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 22,
+        shipIconMargin: -5,
       },
     },
   },
   {
     name: "TIE/D Defender",
     icon: "D",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1626,14 +1633,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 26,
+        shipIconMargin: -5,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 28,
-        leftOffset: 10,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 32,
       },
     },
@@ -1658,7 +1665,7 @@ export const ships: Ship[] = [
         shipIconSize: 26,
         leftOffset: 8,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 22,
       },
@@ -1667,6 +1674,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/ln Fighter",
     icon: "F",
+    iconMargin: -20,
     factions: [Factions.GALACTIC_EMPIRE, Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1678,15 +1686,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 26,
+        shipIconMargin: -10,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 28,
-        leftOffset: 7,
-        rightOffset: 12,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 22,
       },
     },
@@ -1694,6 +1701,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/ph Phantom",
     icon: "P",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1707,13 +1715,12 @@ export const ships: Ship[] = [
         shipIconSize: 26,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 22,
-        leftOffset: 1,
-        rightOffset: 5,
+        shipIconMargin: -20,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 12,
       },
     },
@@ -1721,6 +1728,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/rb Heavy",
     icon: "J",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -1734,13 +1742,11 @@ export const ships: Ship[] = [
         shipIconSize: 47,
       },
       sides: {
-        factionIconSize: 4,
-        shipIconSize: 40,
-        leftOffset: 5,
-        rightOffset: 12,
+        factionIconSize: 5,
+        shipIconSize: 35,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 35,
       },
     },
@@ -1748,6 +1754,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/sa Bomber",
     icon: "B",
+    iconMargin: -20,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1759,14 +1766,14 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 26,
+        shipIconMargin: -10,
       },
       sides: {
-        factionIconSize: 4,
+        factionIconSize: 5,
         shipIconSize: 16,
-        leftOffset: 3,
       },
-      top: {
-        factionIconSize: 4,
+      topAndBottom: {
+        factionIconSize: 5,
         shipIconSize: 16,
       },
     },
@@ -1791,7 +1798,7 @@ export const ships: Ship[] = [
         shipIconSize: 15,
         leftOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 18,
       },
@@ -1818,7 +1825,7 @@ export const ships: Ship[] = [
         shipIconSize: 26,
         leftOffset: 8,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 24,
       },
@@ -1827,6 +1834,7 @@ export const ships: Ship[] = [
   {
     name: "TIE/sk Striker",
     icon: "T",
+    iconMargin: -10,
     factions: [Factions.GALACTIC_EMPIRE],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -1837,14 +1845,13 @@ export const ships: Ship[] = [
     panels: {
       primary: {
         factionIconSize: 5,
-        shipIconSize: 26,
+        shipIconSize: 32,
       },
       sides: {
         factionIconSize: 4,
         shipIconSize: 12,
-        rightOffset: 2,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 10,
       },
@@ -1870,7 +1877,7 @@ export const ships: Ship[] = [
         shipIconSize: 16,
         leftOffset: 3,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 16,
       },
@@ -1897,7 +1904,7 @@ export const ships: Ship[] = [
         leftOffset: -11,
         rightOffset: -7,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 12,
       },
@@ -1922,7 +1929,7 @@ export const ships: Ship[] = [
         factionIconSize: 2,
         shipIconSize: 20,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 6,
         shipIconSize: 40,
       },
@@ -1931,6 +1938,7 @@ export const ships: Ship[] = [
   {
     name: "UT-60D U-Wing",
     icon: "u",
+    iconMargin: -20,
     factions: [Factions.REBEL_ALLIANCE],
     dimensions: {
       size: ShipSizes.MEDIUM,
@@ -1946,9 +1954,8 @@ export const ships: Ship[] = [
       sides: {
         factionIconSize: 4,
         shipIconSize: 16,
-        leftOffset: 3,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 14,
       },
@@ -1974,64 +1981,64 @@ export const ships: Ship[] = [
         shipIconSize: 16,
         leftOffset: 6,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 18,
       },
     },
   },
-  {
-    name: "VCX-100 Light Freighter",
-    icon: "G",
-    factions: [Factions.REBEL_ALLIANCE],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 55,
-      width: 155,
-      length: 120,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 5,
-        shipIconSize: 108,
-      },
-      sides: {
-        factionIconSize: 4,
-        shipIconSize: 42,
-        leftOffset: -3,
-        rightOffset: 2,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 42,
-      },
-    },
-  },
-  {
-    name: "VT-49 Decimator",
-    icon: "d",
-    factions: [Factions.GALACTIC_EMPIRE],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 37,
-      width: 97,
-      length: 143,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 4,
-        shipIconSize: 52,
-      },
-      sides: {
-        factionIconSize: 2,
-        shipIconSize: 20,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 15,
-      },
-    },
-  },
+  // {
+  //   name: "VCX-100 Light Freighter",
+  //   icon: "G",
+  //   factions: [Factions.REBEL_ALLIANCE],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 55,
+  //     width: 155,
+  //     length: 120,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 5,
+  //       shipIconSize: 108,
+  //     },
+  //     sides: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 42,
+  //       leftOffset: -3,
+  //       rightOffset: 2,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 42,
+  //     },
+  //   },
+  // },
+  // {
+  //   name: "VT-49 Decimator",
+  //   icon: "d",
+  //   factions: [Factions.GALACTIC_EMPIRE],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 37,
+  //     width: 97,
+  //     length: 143,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 52,
+  //     },
+  //     sides: {
+  //       factionIconSize: 2,
+  //       shipIconSize: 20,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 15,
+  //     },
+  //   },
+  // },
   {
     name: "Vulture-class Droid Fighter",
     icon: "_",
@@ -2052,7 +2059,7 @@ export const ships: Ship[] = [
         shipIconSize: 9,
         leftOffset: -7,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 5,
       },
@@ -2079,40 +2086,41 @@ export const ships: Ship[] = [
         leftOffset: 5,
         rightOffset: 10,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
         shipIconSize: 34,
       },
     },
   },
-  {
-    name: "YT-2400",
-    icon: "o",
-    factions: [Factions.REBEL_ALLIANCE],
-    dimensions: {
-      size: ShipSizes.LARGE,
-      height: 34,
-      width: 68,
-      length: 102,
-    },
-    panels: {
-      primary: {
-        factionIconSize: 4,
-        shipIconSize: 60,
-      },
-      sides: {
-        factionIconSize: 2,
-        shipIconSize: 25,
-      },
-      top: {
-        factionIconSize: 4,
-        shipIconSize: 25,
-      },
-    },
-  },
+  // {
+  //   name: "YT-2400",
+  //   icon: "o",
+  //   factions: [Factions.REBEL_ALLIANCE],
+  //   dimensions: {
+  //     size: ShipSizes.LARGE,
+  //     height: 34,
+  //     width: 68,
+  //     length: 102,
+  //   },
+  //   panels: {
+  //     primary: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 60,
+  //     },
+  //     sides: {
+  //       factionIconSize: 2,
+  //       shipIconSize: 25,
+  //     },
+  //     topAndBottom: {
+  //       factionIconSize: 4,
+  //       shipIconSize: 25,
+  //     },
+  //   },
+  // },
   {
     name: "Z-95-AF4 Headhunter",
     icon: "z",
+    iconMargin: -10,
     factions: [Factions.REBEL_ALLIANCE, Factions.SCUM_AND_VILLAINY],
     dimensions: {
       size: ShipSizes.SMALL,
@@ -2124,15 +2132,15 @@ export const ships: Ship[] = [
       primary: {
         factionIconSize: 5,
         shipIconSize: 37,
+        shipIconMargin: -20,
       },
       sides: {
         factionIconSize: 4,
         shipIconSize: 9,
-        leftOffset: -5,
       },
-      top: {
+      topAndBottom: {
         factionIconSize: 4,
-        shipIconSize: 7,
+        shipIconSize: 10,
       },
     },
   },

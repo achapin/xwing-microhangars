@@ -25,7 +25,7 @@ const PrimaryPanel = ({ ship, faction, useFactionColor }: ShipProps) => {
 };
 
 const TopPanel = ({ ship, faction, useFactionColor }: ShipProps) => {
-  const panel = ship.panels.top;
+  const panel = ship.panels.topAndBottom;
 
   return panel ? (
     <span className="panel-wrapper upside-down">
@@ -37,10 +37,10 @@ const TopPanel = ({ ship, faction, useFactionColor }: ShipProps) => {
 };
 
 const BottomPanel = ({ ship, faction, useFactionColor }: ShipProps) => {
-  const panel = ship.panels.top;
+  const panel = ship.panels.topAndBottom;
 
   return panel ? (
-    <span className="panel-wrapper">
+    <span className="panel-wrapper bottom-panel">
       <Panel {...{ faction, ship, panel, useFactionColor }} />
     </span>
   ) : (
@@ -78,7 +78,9 @@ const Panel = ({ ship, faction, panel, useFactionColor }: PanelProps) => {
   const factionStyle = { ...factionIconSize, ...factionColor };
 
   const shipIconSize = { fontSize: `${panel.shipIconSize}mm` };
-  const shipIconMargin = ship.iconMargin
+  const shipIconMargin = panel.shipIconMargin
+    ? { margin: `${panel.shipIconMargin}%` }
+    : ship.iconMargin
     ? { margin: `${ship.iconMargin}%` }
     : {};
   const iconStyle = { ...shipIconSize, ...shipIconMargin };
