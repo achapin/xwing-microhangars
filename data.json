@@ -839,6 +839,23 @@
             "factions": ["First Order"]
         },
         { 
+            "name": "TIE/vn Silencer",
+            "modifier" : "2.0 Sculpt",
+            "icon": "$",
+            "height": 18,
+            "width": 32,
+            "length": 64,
+            "size": "small",
+            "sideLeftOffset" : 0,
+            "displayFactionSize": 5,
+            "displayIconSize": 45,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":11,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["First Order"]
+        },
+        { 
             "name": "TIE/Ba Interceptor",
             "icon": "j",
             "height": 26,
