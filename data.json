@@ -1439,6 +1439,38 @@
             "displayTopFactionSize":4,
             "displayTopIconSize":25,
             "factions": ["Scum and Villainy", "Seperatist Alliance"]
+        },
+        { 
+            "name": "ST-70 Assault Ship",
+            "icon":"",
+            "height": 36,
+            "width": 62,
+            "length": 84,
+            "size": "medium",
+            "sideLeftOffset" : 0,
+            "displayFactionSize": 5,
+            "displayIconSize": 45,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":11,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["Scum and Villainy"]
+        },
+        { 
+            "name": "Gauntlet Fighter",
+            "icon":"",
+            "height": 32,
+            "width": 177,
+            "length": 165,
+            "size": "large",
+            "sideLeftOffset" : 0,
+            "displayFactionSize": 5,
+            "displayIconSize": 45,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":11,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["Rebel Alliance", "Galactic Empire", "Scum and Villainy", "Galactic Republic", "Separatist Alliance"]
         }
     ]
 }
