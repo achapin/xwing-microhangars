@@ -147,6 +147,94 @@ function getShipTable(shipToParse, faction, id){
 
     if(ship.size == "large")
     {
+        if(ship.hasOwnProperty("orientation") && ship.orientation == "split")
+        {
+            return `<div id="ship-${id}" class="box">
+            <span class="btn-remove no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
+            <table>
+                <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="left-side render cut-left cut-top cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                        <div class="upsideDown content">
+                        ${displaySide}
+                        </div>
+                    </td>
+                </tr>
+                <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                    </td>
+                    <td class="front render cut-left cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                        <div class="leftSide content">
+                        ${display}
+                        </div>
+                    </td>
+                </tr>
+                <tr class="large-right" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="right-side render cut-bottom cut-left cut-right" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                        <div class="content">
+                        ${displaySide}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="left-side-flap glue cut-top cut-right cut-left"></td>
+                </tr>
+                <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                    <td class="back render cut-right cut-left" style="width:${ship.length}mm; max-width:${ship.length}mm;">
+                        <div class="leftSide content">
+                        ${display}
+                        </div>
+                    </td>
+                </tr>
+                <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="right-side-flap glue cut-left cut-right cut-bottom"></td>
+                </tr>
+            </table>
+            <br />
+            <table style="float:left; margin-right: 10mm">
+                <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="top" style="width:15mm; max-width:15mm;"> </td>
+                    <td class="left-top-flap render cut-top cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-top-right-radius:${ship.height}mm;"></td>
+                </tr>
+                <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                    <td class="top glue cut-top cut-left cut-bottom" style="width:15mm; max-width:15mm;"> </td>
+                    <td class="top render" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                        <div class="rightSide content">
+                        ${displayTop}
+                        </div>
+                    </td>
+                    <td class="top-flap render cut-top cut-right cut-bottom side-flap" style="border-top-right-radius:5mm; border-bottom-right-radius:5mm;"></td>
+                </tr>
+                <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                    <td class="top" style="width:15mm; max-width:15mm;"> </td>
+                    <td class="right-top-flap render cut-bottom cut-right" style="width:${ship.height}mm; max-width:${ship.height}mm; border-bottom-right-radius:${ship.height}mm;"></td>
+                </tr>
+            </table>
+             
+            <table>
+            <tr class="large-left" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                <td class="glue cut-left cut-top" style="width:10mm; max-width:10mm;"> </td>    
+                <td class="left-bottom-flap render glue cut-top" style="width:${ship.height}mm; max-width:${ship.height}mm;"> </td>
+                <td class="glue cut-right cut-top cut-bottom" style="width:10mm; max-width:10mm;"> </td>
+            </tr>
+            <tr class="large-center" style="height:${ship.width}mm; max-height:${ship.width}mm;">
+                <td class="glue cut-left cut-top cut-bottom" style="width:10mm; max-width:10mm;"> </td>
+                <td class="bottom render" style="width:${ship.height}mm; max-width:${ship.height}mm;">
+                    <div class="leftSide content">
+                    ${displayTop}
+                    </div>
+                </td>
+                <td class="glue cut-right cut-top cut-bottom" style="width:10mm; max-width:10mm;"> </td>
+            </tr>
+            <tr class="large-right" style="height:${ship.height}mm; max-height:${ship.height}mm;">
+                <td class="glue cut-left cut-top cut-bottom" style="width:10mm; max-width:10mm;"> </td>
+                <td class="right-bottom-flap render glue cut-bottom" style="width:${ship.height}mm; max-width:${ship.height}mm;"></td>
+                <td class="glue cut-right cut-top cut-bottom" style="width:10mm; max-width:10mm;"> </td>
+            </tr>
+            </table>
+            </div>`;
+        }
         return `<div id="ship-${id}" class="box">
         <span class="btn-remove no-print" onclick="remove(${id})">Remove</span> <span class="no-print">${warning}</span>
         <table>
