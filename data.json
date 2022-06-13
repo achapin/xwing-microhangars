@@ -232,7 +232,7 @@
             "displayFactionSize":5,
             "displayIconSize":47,
             "displaySideFactionSize":4,
-            "displaySideIconSize":40,
+            "displaySideIconSize":32,
             "displayTopFactionSize":4,
             "displayTopIconSize":35,
             "factions": ["Galactic Empire"]
