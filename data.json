@@ -1508,6 +1508,40 @@
             "displayTopFactionSize":4,
             "displayTopIconSize":7,
             "factions": ["Galactic Republic"]
+        },
+        { 
+            "name": "BTL-S8 K-Wing",
+            "icon": "k",
+            "height": 18,
+            "width": 58,
+            "length": 87,
+            "size": "medium",
+            "sideLeftOffset" : -1,
+            "sideRightOffset" : 1,
+            "displayFactionSize": 5,
+            "displayIconSize": 37,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":13,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["Rebel Alliance"]
+        },
+        { 
+            "name": "E-Wing",
+            "icon": "e",
+            "height": 15,
+            "width": 35,
+            "length": 45,
+            "size": "small",
+            "sideLeftOffset" : 2,
+            "sideRightOffset" : 4,
+            "displayFactionSize": 5,
+            "displayIconSize": 32,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":10,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["Rebel Alliance"]
         }
     ]
 }
