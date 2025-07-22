@@ -1546,9 +1546,9 @@
         { 
             "name": "Sith Infiltrator",
             "icon": "]",
-            "height": 26,
-            "width": 71,
-            "length": 99,
+            "height": 28,
+            "width": 72,
+            "length": 100,
             "size": "large",
             "sideLeftOffset" : 2,
             "sideRightOffset" : 4,
