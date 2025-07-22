@@ -1542,6 +1542,23 @@
             "displayTopFactionSize":4,
             "displayTopIconSize":10,
             "factions": ["Rebel Alliance"]
+        },
+        { 
+            "name": "Sith Infiltrator",
+            "icon": "]",
+            "height": 26,
+            "width": 71,
+            "length": 99,
+            "size": "large",
+            "sideLeftOffset" : 2,
+            "sideRightOffset" : 4,
+            "displayFactionSize": 5,
+            "displayIconSize": 32,
+            "displaySideFactionSize":4,
+            "displaySideIconSize":10,
+            "displayTopFactionSize":4,
+            "displayTopIconSize":10,
+            "factions": ["Seperatist Alliance"]
         }
     ]
 }
